@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agro Education & Workshops | Nisarg Shrishti</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { cream: '#FFF5F5', blush: '#FCE7F0', forest: '#1C3F36', sage: '#D2E3D4', terracotta: '#C86D51', gold: '#F3C86A' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-watercolor text-forest pb-20">
+
+  <!-- NAVIGATION BAR -->
+  <nav class="floating-nav px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center space-x-2">
+      <span class="font-serif text-2xl font-bold text-forest">Nisarg Shrishti</span>
+    </a>
+    <div class="hidden md:flex space-x-6 text-sm font-bold text-slate-700">
+      <a href="index.html" class="hover:text-terracotta">Home</a>
+      <a href="activities.html" class="hover:text-terracotta">Activities</a>
+      <a href="agro-learning.html" class="hover:text-terracotta text-terracotta">Agro Learning</a>
+      <a href="about.html" class="hover:text-terracotta">Our Story</a>
+      <a href="contact.html" class="hover:text-terracotta">Contact</a>
+    </div>
+    <a href="booking.html" class="bg-forest text-white px-5 py-2.5 rounded-full text-sm font-bold shadow hover:bg-emerald-950 transition">Book Visit</a>
+  </nav>
+
+  <!-- CONTENT -->
+  <div class="max-w-5xl mx-auto pt-36 px-6">
+    <div class="text-center mb-12">
+      <span class="px-4 py-1.5 bg-blush text-terracotta text-xs font-bold rounded-full uppercase tracking-wider">Experiential Education</span>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-forest mt-4 mb-4">Agro-Tourism & Hands-on Learning</h1>
+      <p class="text-slate-600 max-w-2xl mx-auto">Discover native farming techniques, organic soil health, vermicomposting, and sustainable agriculture through immersive guided tours.</p>
+    </div>
+
+    <!-- MODULE CARDS -->
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm hover:shadow-md transition">
+        <div class="w-12 h-12 bg-sage/40 rounded-2xl flex items-center justify-center text-2xl mb-4">🌱</div>
+        <h3 class="font-serif text-xl font-bold text-forest mb-2">Organic Farming 101</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Learn zero-budget natural farming methods, crop rotation, and seed preservation techniques without chemicals.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm hover:shadow-md transition">
+        <div class="w-12 h-12 bg-blush rounded-2xl flex items-center justify-center text-2xl mb-4">🪱</div>
+        <h3 class="font-serif text-xl font-bold text-forest mb-2">Vermicomposting</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Hands-on experience in converting organic farm waste into nutrient-rich black gold fertilizer for kitchen gardens.</p>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm hover:shadow-md transition">
+        <div class="w-12 h-12 bg-gold/30 rounded-2xl flex items-center justify-center text-2xl mb-4">🐝</div>
+        <h3 class="font-serif text-xl font-bold text-forest mb-2">Flora & Fauna Guided Tour</h3>
+        <p class="text-sm text-slate-600 leading-relaxed">Identify over 40+ medicinal plants, native trees, butterfly habitats, and exotic birds across our estate.</p>
+      </div>
+    </div>
+
+    <!-- SCHOOL / GROUP BANNER -->
+    <div class="bg-forest text-white rounded-3xl p-8 text-center md:text-left md:flex items-center justify-between shadow-lg">
+      <div class="mb-6 md:mb-0 max-w-lg">
+        <h2 class="font-serif text-2xl font-bold mb-2">Planning a School or Group Visit?</h2>
+        <p class="text-slate-200 text-sm">We host custom educational field trips tailored to science and environmental curriculums for school students.</p>
+      </div>
+      <a href="booking.html" class="inline-block bg-gold text-forest font-bold px-6 py-3 rounded-full hover:bg-yellow-400 transition shadow">Book Group Field Trip</a>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
