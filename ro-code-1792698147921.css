@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Noto+Sans+Devanagari:wght@400;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-cream: #FFF5F5;
+  --card-pink: #FCE7F0;
+  --text-forest: #1C3F36;
+  --sage-accent: #D2E3D4;
+  --terracotta: #C86D51;
+  --mustard-gold: #F3C86A;
+}
+
+body {
+  font-family: 'Nunito', 'Noto Sans Devanagari', sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--text-forest);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: 'DM Serif Display', 'Noto Sans Devanagari', serif;
+}
+
+/* Subtle Paper-Grain & Watercolor Backdrop */
+.bg-watercolor {
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(252, 231, 240, 0.6) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(210, 227, 212, 0.5) 0%, transparent 40%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Floating Pill Nav */
+.floating-nav {
+  position: fixed;
+  top: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  width: 92%;
+  max-width: 1100px;
+  background: rgba(255, 245, 245, 0.88);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(210, 227, 212, 0.6);
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(28, 63, 54, 0.06);
+}
+
+/* FLOATING COW FACE BUTTON (Booking Trigger) */
+.cow-floating-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 45;
+  background: #ffffff;
+  border: 2px solid var(--terracotta);
+  border-radius: 9999px;
+  padding: 0.6rem 1.2rem 0.6rem 0.8rem;
+  box-shadow: 0 12px 28px rgba(200, 109, 81, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.cow-floating-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 16px 36px rgba(200, 109, 81, 0.35);
+}
+
+/* ANIMATIONS: FLYING BIRDS, RUNNING OSTRICH, JUMPING FISH */
+@keyframes flyAcross {
+  0% { transform: translate(-10vw, 0vh) scale(0.8); }
+  50% { transform: translate(50vw, -4vh) scale(1.0); }
+  100% { transform: translate(110vw, -2vh) scale(0.8); }
+}
+.anim-bird {
+  position: absolute;
+  top: 15%;
+  left: -10%;
+  width: 70px;
+  height: auto;
+  pointer-events: none;
+  z-index: 20;
+  animation: flyAcross 18s linear infinite;
+}
+
+@keyframes ostrichRun {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100vw); }
+}
+.anim-ostrich-runner {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  width: 90px;
+  animation: ostrichRun 14s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes fishJump {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  30% { opacity: 1; }
+  50% { transform: translateY(-45px) rotate(20deg); opacity: 1; }
+  70% { opacity: 1; }
+  90% { transform: translateY(0) rotate(0deg); opacity: 0; }
+}
+.anim-fish {
+  animation: fishJump 4s ease-in-out infinite;
+}
+
+@keyframes plantGrow {
+  0% { transform: scaleY(0.7) translateY(10px); }
+  50% { transform: scaleY(1) translateY(0); }
+  100% { transform: scaleY(0.7) translateY(10px); }
+}
+.anim-plant {
+  transform-origin: bottom;
+  animation: plantGrow 5s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-cream); }
+::-webkit-scrollbar-thumb { background: var(--sage-accent); border-radius: 4px; }

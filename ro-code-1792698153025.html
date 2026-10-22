@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nisarg Shrishti | Organic Agro Tourism & Education Pune</title>
+  <meta name="description" content="Aesthetic organic farm, animal petting, aquatic farming, and outdoor adventures in Pune.">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FFF5F5',
+            blush: '#FCE7F0',
+            forest: '#1C3F36',
+            sage: '#D2E3D4',
+            terracotta: '#C86D51',
+            gold: '#F3C86A'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- Schema.org TouristAttraction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    "name": "Nisarg Shrishti Agro Tourism",
+    "description": "Organic agro education and tourism destination in Pune, Maharashtra.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "addressCountry": "IN"
+    },
+    "priceRange": "₹300"
+  }
+  </script>
+</head>
+<body class="bg-watercolor text-forest">
+
+  <!-- FLYING MACAW / BIRD ANIMATION OVERLAY -->
+  <svg class="anim-bird text-terracotta" viewBox="0 0 100 60" fill="currentColor">
+    <path d="M0,30 Q25,5 50,30 Q75,55 100,30 Q75,10 50,30 Q25,50 0,30 Z"/>
+  </svg>
+
+  <!-- FLOATING PILL NAVBAR -->
+  <nav class="floating-nav px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center space-x-2">
+      <!-- Watercolor Plant SVG -->
+      <svg class="w-8 h-8 text-terracotta anim-plant" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+      </svg>
+      <span class="font-serif text-2xl font-bold text-forest">Nisarg Shrishti</span>
+    </a>
+
+    <div class="hidden md:flex space-x-6 text-sm font-bold text-slate-700">
+      <a href="index.html" class="hover:text-terracotta transition" data-i18n="nav_home">Home</a>
+      <a href="activities.html" class="hover:text-terracotta transition" data-i18n="nav_activities">Activities</a>
+      <a href="agro-learning.html" class="hover:text-terracotta transition" data-i18n="nav_learning">Agro Learning</a>
+      <a href="about.html" class="hover:text-terracotta transition" data-i18n="nav_about">Our Story</a>
+      <a href="contact.html" class="hover:text-terracotta transition" data-i18n="nav_contact">Contact</a>
+    </div>
+
+    <div class="flex items-center space-x-3">
+      <button onclick="setLanguage(currentLang === 'en' ? 'mr' : 'en')" class="px-3 py-1 bg-blush rounded-full text-xs font-bold text-terracotta border border-terracotta/20">
+        EN / मराठी
+      </button>
+
+      <a href="booking.html" class="hidden sm:inline-block bg-forest text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-md hover:bg-emerald-950 transition" data-i18n="btn_book_now">
+        Book Your Day
+      </a>
+    </div>
+  </nav>
+
+  <!-- FLOATING COW FACE BUTTON (INSPECT & BOOK) -->
+  <button onclick="openBookingQuickView()" class="cow-floating-btn" aria-label="Book Visit">
+    <!-- Watercolor Cow Face SVG Icon -->
+    <svg class="w-9 h-9 text-forest" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="28" fill="#FCE7F0"/>
+      <path d="M18 22C14 18 10 22 14 28C18 32 22 28 18 22Z" fill="#C86D51"/>
+      <path d="M46 22C50 18 54 22 50 28C46 32 42 28 46 22Z" fill="#C86D51"/>
+      <ellipse cx="32" cy="38" rx="14" ry="10" fill="#FFF5F5" stroke="#1C3F36" stroke-width="2"/>
+      <circle cx="26" cy="36" r="2" fill="#1C3F36"/>
+      <circle cx="38" cy="36" r="2" fill="#1C3F36"/>
+      <circle cx="24" cy="26" r="3" fill="#1C3F36"/>
+      <circle cx="40" cy="26" r="3" fill="#1C3F36"/>
+    </svg>
+    <div class="text-left">
+      <div class="text-[10px] font-extrabold uppercase tracking-wider text-terracotta">Reserve Spot</div>
+      <div class="text-xs font-bold text-forest" data-i18n="cow_floating_label">Book Visit (₹300)</div>
+    </div>
+  </button>
+
+  <!-- HERO SECTION WITH WATERCOLOR ILLUSTRATIONS & RUNNING OSTRICH -->
+  <header class="relative pt-36 pb-24 px-6 min-h-[90vh] flex items-center justify-center overflow-hidden">
+    
+    <div class="max-w-4xl mx-auto text-center z-10">
+      <span class="inline-block px-4 py-1.5 bg-blush text-terracotta rounded-full text-xs font-extrabold tracking-widest uppercase mb-4 border border-terracotta/20">
+        Organic Agro Tourism • Pune
+      </span>
+
+      <h1 class="font-serif text-5xl md:text-7xl font-bold text-forest leading-tight mb-6" data-i18n="hero_title">
+        Reconnect with Nature & Earth
+      </h1>
+
+      <p class="text-lg md:text-xl text-slate-700 max-w-2xl mx-auto mb-10 leading-relaxed" data-i18n="hero_subtitle">
+        Step into a lush, organic wonderland in Pune. Animal petting, watercolor sunsets, aquatic farming, and authentic village feasting.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a href="booking.html" class="w-full sm:w-auto px-8 py-4 bg-terracotta text-white font-bold rounded-full text-lg shadow-lg hover:bg-orange-800 transition">
+          Book Day Ticket - ₹300
+        </a>
+        <a href="activities.html" class="w-full sm:w-auto px-8 py-4 bg-white/90 text-forest border border-sage font-bold rounded-full text-lg hover:bg-white transition">
+          View Farm Activities
+        </a>
+      </div>
+
+      <!-- ANIMATED COUNTERS -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white/80 backdrop-blur-md p-6 rounded-3xl border border-sage shadow-sm">
+        <div>
+          <div class="text-3xl font-serif font-extrabold text-terracotta" id="cnt-1">0</div>
+          <div class="text-xs font-bold text-slate-600 mt-1" data-i18n="stat_plants">Plant Varieties</div>
+        </div>
+        <div>
+          <div class="text-3xl font-serif font-extrabold text-terracotta" id="cnt-2">0</div>
+          <div class="text-xs font-bold text-slate-600 mt-1" data-i18n="stat_animals">Species</div>
+        </div>
+        <div>
+          <div class="text-3xl font-serif font-extrabold text-terracotta" id="cnt-3">0</div>
+          <div class="text-xs font-bold text-slate-600 mt-1" data-i18n="stat_activities">Activities</div>
+        </div>
+        <div>
+          <div class="text-3xl font-serif font-extrabold text-terracotta">100%</div>
+          <div class="text-xs font-bold text-slate-600 mt-1" data-i18n="stat_memories">Organic Joy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RUNNING OSTRICH SVG ANIMATION AT HERO BOTTOM -->
+    <div class="anim-ostrich-runner">
+      <svg class="w-16 h-16 text-forest" viewBox="0 0 64 64" fill="currentColor">
+        <path d="M32,12 C28,12 24,16 28,24 C30,28 26,36 20,38 C14,40 10,48 18,52 C22,54 28,50 32,44 C36,50 42,54 46,52 C54,48 50,40 44,38 C38,36 34,28 36,24 C40,16 36,12 32,12 Z"/>
+      </svg>
+    </div>
+  </header>
+
+  <!-- STORY-STYLE ACTIVITY OVERVIEW -->
+  <section class="py-20 px-6 max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="font-serif text-4xl font-bold text-forest">Explore Farm Highlights</h2>
+      <p class="text-slate-600 text-sm mt-2">Click any activity card to reveal details & learning insights</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Ostrich Card -->
+      <div onclick="openModal('Meet Our Ostrich', 'Get up close with giant ostriches, learn about their feeding habits, egg incubation, and growth cycle.')" class="group bg-white p-4 rounded-3xl border border-sage shadow-sm hover:shadow-md transition cursor-pointer overflow-hidden">
+        <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
+          <!-- REPLACE: ostrich (portrait 800x1000) -->
+          <img src="https://images.unsplash.com/photo-1544986581-efac024faf62?auto=format&fit=crop&w=800&q=80" alt="Meet Ostrich" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="handleImageError(this, 'Ostrich Zone')">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <h3 class="absolute bottom-4 left-4 font-serif text-2xl text-white font-bold">Meet Our Ostrich</h3>
+        </div>
+        <p class="text-xs text-slate-600 line-clamp-2">Interactive animal petting, photo sessions, and guided ostrich biology tour.</p>
+      </div>
+
+      <!-- Bird Aviary Card -->
+      <div onclick="openModal('Exotic Bird Aviary', 'Walk through a free-flight aviary with over 15 colorful species including parakeets, lovebirds, and finches.')" class="group bg-white p-4 rounded-3xl border border-sage shadow-sm hover:shadow-md transition cursor-pointer overflow-hidden">
+        <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
+          <!-- REPLACE: aviary (portrait 800x1000) -->
+          <img src="https://images.unsplash.com/photo-1522858547137-f1dcec554f55?auto=format&fit=crop&w=800&q=80" alt="Bird Aviary" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="handleImageError(this, 'Bird Aviary')">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          <h3 class="absolute bottom-4 left-4 font-serif text-2xl text-white font-bold">Bird Aviary</h3>
+        </div>
+        <p class="text-xs text-slate-600 line-clamp-2">Listen to bird songs, hold grain trays, and learn nest-building techniques.</p>
+      </div>
+
+      <!-- Aquatic Farming & Swimming Fish -->
+      <div onclick="openModal('Aquatic & Fish Farming', 'Explore shrimp, crab, and ornamental fish breeding ponds with live fish jumping demonstrations.')" class="group bg-white p-4 rounded-3xl border border-sage shadow-sm hover:shadow-md transition cursor-pointer overflow-hidden">
+        <div class="relative h-64 rounded-2xl overflow-hidden mb-4">
+          <!-- REPLACE: aquarium (portrait 800x1000) -->
+          <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=800&q=80" alt="Fish Farming" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="handleImageError(this, 'Aquatic Hub')">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+          
+          <!-- JUMPING FISH VECTOR OVERLAY -->
+          <svg class="anim-fish absolute top-8 right-8 w-10 h-10 text-gold" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+          </svg>
+
+          <h3 class="absolute bottom-4 left-4 font-serif text-2xl text-white font-bold">Aquatic & Pearl Farming</h3>
+        </div>
+        <p class="text-xs text-slate-600 line-clamp-2">Discover freshwater pearl cultivation, shrimp rearing, and ornamental fish breeding.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERNIGHT CAMPING VS DAY TOUR PACKAGES -->
+  <section class="py-16 px-6 bg-blush/40 border-y border-sage/50">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="font-serif text-4xl font-bold text-forest">Packages & Experiences</h2>
+        <p class="text-slate-600 text-sm mt-1">Full-day educational visits or overnight campfire sessions under the stars.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Package 1: Day Visit -->
+        <div class="bg-white p-8 rounded-3xl border border-sage shadow-sm flex flex-col justify-between">
+          <div>
+            <span class="px-3 py-1 bg-sage/40 text-forest rounded-full text-xs font-bold">Day Pass (08:30 AM – 06:30 PM)</span>
+            <h3 class="font-serif text-3xl font-bold text-forest mt-4">Full Day Agro Pass</h3>
+            <div class="my-4">
+              <span class="text-4xl font-extrabold text-terracotta">₹300</span>
+              <span class="text-slate-500 text-sm">/ visitor</span>
+            </div>
+            <ul class="space-y-2.5 text-sm text-slate-700 mb-6">
+              <li>✓ Complete Guided Agro-Education Tour</li>
+              <li>✓ Animal Petting & Bird Aviary Access</li>
+              <li>✓ Farm-Fresh Organic Veg Lunch</li>
+              <li>✓ Kids Play Area & Clay Toy Workshop</li>
+            </ul>
+          </div>
+          <a href="booking.html" class="w-full py-3 bg-forest text-white text-center rounded-full font-bold hover:bg-emerald-950 transition">Book Day Pass</a>
+        </div>
+
+        <!-- Package 2: Overnight Camping & Campfire -->
+        <div class="bg-forest text-white p-8 rounded-3xl shadow-md flex flex-col justify-between relative overflow-hidden">
+          <div>
+            <span class="px-3 py-1 bg-gold text-slate-900 rounded-full text-xs font-bold">Night Session (06:30 PM – 08:30 AM)</span>
+            <h3 class="font-serif text-3xl font-bold mt-4">Overnight Camping & Night Campfire</h3>
+            <div class="my-4">
+              <span class="text-4xl font-extrabold text-gold">₹1,200</span>
+              <span class="text-emerald-200 text-sm">/ guest</span>
+            </div>
+            <p class="text-xs text-emerald-100 mb-4">Note: The night campfire session is exclusively for overnight stay guests. Includes tent stay, dinner, campfire acoustic music, and morning farm breakfast.</p>
+            <ul class="space-y-2.5 text-sm text-emerald-100 mb-6">
+              <li>✓ Tent Stay with Clean Bedding & Safety</li>
+              <li>✓ Night Campfire & Stargazing Session</li>
+              <li>✓ Traditional Village Dinner & High-Tea</li>
+              <li>✓ Morning Bird Walk & Organic Breakfast</li>
+            </ul>
+          </div>
+          <a href="booking.html" class="w-full py-3 bg-gold text-slate-900 text-center rounded-full font-bold hover:bg-yellow-400 transition">Book Camping Experience</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DETAIL MODAL / DRAWER -->
+  <div id="detail-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white max-w-lg w-full p-6 rounded-3xl shadow-xl text-left border border-sage">
+      <h3 class="font-serif text-2xl font-bold text-forest mb-2" id="modal-title">Activity Title</h3>
+      <p class="text-sm text-slate-600 mb-6" id="modal-desc">Detailed activity prose goes here...</p>
+      <div class="flex justify-end space-x-3">
+        <button onclick="closeModal()" class="px-5 py-2 bg-slate-100 font-bold text-slate-700 rounded-full text-sm">Close</button>
+        <a href="booking.html" class="px-5 py-2 bg-terracotta text-white font-bold rounded-full text-sm">Book This Activity</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-forest text-white py-12 px-6 mt-20">
+    <div class="max-w-5xl mx-auto text-center">
+      <h3 class="font-serif text-3xl font-bold mb-2">Nisarg Shrishti</h3>
+      <p class="text-xs text-emerald-200 mb-6">Katraj-Kondhwa Road, Swargate, Pune, Maharashtra • +91 98765 43210</p>
+      <div class="text-xs text-emerald-400 border-t border-emerald-800 pt-6">
+        © 2026 Nisarg Shrishti Agro Tourism & Education. Built for GitHub Pages.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
