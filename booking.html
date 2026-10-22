@@ -29,13 +29,14 @@
       <a href="about.html">Our Story</a>
       <a href="contact.html">Contact</a>
     </div>
-    <a href="index.html" class="bg-slate-200 text-slate-800 px-4 py-2 rounded-full text-xs font-bold">← Back Home</a>
+    <a href="tel:9923000700" class="bg-blush text-terracotta border border-terracotta/20 px-4 py-2 rounded-full text-xs font-bold">📞 Direct Inquiry: 99230 00700</a>
   </nav>
 
   <div class="max-w-4xl mx-auto pt-36 px-6">
     <div class="text-center mb-10">
       <span class="px-4 py-1 bg-blush text-terracotta text-xs font-bold rounded-full uppercase">Instant Ticket Reservation</span>
-      <h1 class="font-serif text-4xl md:text-5xl font-bold text-forest mt-3">Reserve Your Farm Experience</h1>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-forest mt-3">Reserve Your Farm Pass</h1>
+      <p class="text-sm text-slate-600 mt-2">Questions? Call us directly at <a href="tel:9923000700" class="font-bold text-terracotta underline">+91 99230 00700</a></p>
     </div>
 
     <!-- TICKET TYPE SELECTOR CARD -->
@@ -43,18 +44,18 @@
       <h2 class="font-serif text-2xl font-bold text-forest mb-6">1. Choose Visit Type</h2>
       
       <div class="grid md:grid-cols-2 gap-6 mb-8">
-        <!-- Option 1: Day Picnic -->
+        <!-- Day Picnic -->
         <label id="cardDay" class="border-2 border-terracotta bg-blush/30 p-6 rounded-3xl cursor-pointer block transition relative">
           <input type="radio" name="visitType" value="day" checked class="sr-only" onchange="updateBooking()">
           <div class="flex justify-between items-center mb-3">
-            <span class="font-serif text-2xl font-bold text-forest">Day Picnic Pass</span>
+            <span class="font-serif text-2xl font-bold text-forest">Day Pass</span>
             <span class="text-xl font-extrabold text-terracotta">₹300 <span class="text-xs text-slate-500 font-normal">/ guest</span></span>
           </div>
-          <p class="text-xs text-slate-600 mb-3">8:30 AM – 6:30 PM • Includes organic breakfast, village buffet lunch, aviary entrance & pottery workshop.</p>
-          <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">Available Daily</span>
+          <p class="text-xs text-slate-600 mb-3">8:30 AM – 6:30 PM • Organic breakfast, village buffet lunch, aviary entrance & activities.</p>
+          <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">Day Tour</span>
         </label>
 
-        <!-- Option 2: Night Stay -->
+        <!-- Night Stay -->
         <label id="cardStay" class="border-2 border-slate-200 bg-white p-6 rounded-3xl cursor-pointer block transition relative">
           <input type="radio" name="visitType" value="stay" class="sr-only" onchange="updateBooking()">
           <div class="flex justify-between items-center mb-3">
@@ -62,33 +63,39 @@
             <span class="text-xl font-extrabold text-terracotta">₹1,200 <span class="text-xs text-slate-500 font-normal">/ guest</span></span>
           </div>
           <p class="text-xs text-slate-600 mb-3">12:00 PM – Next Day 10:00 AM • Cottage accommodation, night campfire session, dinner & breakfast.</p>
-          <span class="text-xs font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full">Includes Starlit Campfire 🔥</span>
+          <span class="text-xs font-bold text-purple-700 bg-purple-100 px-3 py-1 rounded-full">Includes Campfire 🔥</span>
         </label>
       </div>
 
-      <!-- GUEST & DATE FORM -->
-      <h2 class="font-serif text-2xl font-bold text-forest mb-6">2. Visitor Details</h2>
-      <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <!-- VISITOR DETAILS FORM -->
+      <h2 class="font-serif text-2xl font-bold text-forest mb-6">2. Visitor Information</h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-6">
         <div>
-          <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Visit Date</label>
+          <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Full Name *</label>
+          <input type="text" id="guestName" placeholder="e.g. Rahul Sharma" required class="w-full p-3 border border-slate-300 rounded-2xl text-sm font-semibold focus:outline-none focus:border-terracotta">
+        </div>
+        <div>
+          <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Mobile / WhatsApp Number *</label>
+          <input type="tel" id="guestPhone" placeholder="e.g. 9876543210" required class="w-full p-3 border border-slate-300 rounded-2xl text-sm font-semibold focus:outline-none focus:border-terracotta">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-8">
+        <div>
+          <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Date of Visit *</label>
           <input type="date" id="bookingDate" class="w-full p-3 border border-slate-300 rounded-2xl text-sm font-semibold focus:outline-none focus:border-terracotta">
         </div>
         <div>
-          <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Number of Guests</label>
+          <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Number of Guests *</label>
           <input type="number" id="guestCount" value="2" min="1" max="50" onchange="updateBooking()" oninput="updateBooking()" class="w-full p-3 border border-slate-300 rounded-2xl text-sm font-semibold focus:outline-none focus:border-terracotta">
-        </div>
-        <div>
-          <label class="block text-xs font-bold text-slate-600 uppercase mb-2">Full Name</label>
-          <input type="text" id="guestName" placeholder="e.g. Rahul Sharma" class="w-full p-3 border border-slate-300 rounded-2xl text-sm font-semibold focus:outline-none focus:border-terracotta">
         </div>
       </div>
 
       <!-- SUMMARY & UPI QR SECTION -->
       <div class="bg-paper p-6 rounded-3xl border border-sage/40 flex flex-col md:flex-row items-center justify-between gap-6">
         <div>
-          <span class="text-xs font-bold text-slate-500 uppercase">Total Payable Amount</span>
+          <span class="text-xs font-bold text-slate-500 uppercase">Total Amount Payable</span>
           <div id="totalDisplay" class="font-serif text-4xl font-extrabold text-forest">₹600</div>
-          <p class="text-xs text-slate-500 mt-1">Instant seat hold for 15 minutes upon scanning.</p>
         </div>
 
         <button onclick="generateUPI()" class="px-8 py-4 bg-terracotta text-white font-bold rounded-full shadow-lg hover:bg-orange-800 transition">
@@ -96,10 +103,10 @@
         </button>
       </div>
 
-      <!-- DYNAMIC QR MODAL / BOX -->
+      <!-- DYNAMIC QR BOX -->
       <div id="qrBox" class="hidden mt-8 p-6 bg-white border-2 border-emerald-500 rounded-3xl text-center">
         <h3 class="font-serif text-xl font-bold text-forest mb-2">Scan & Pay via GPay / PhonePe / Paytm</h3>
-        <p class="text-xs text-slate-500 mb-4">Scan the code below to complete instant pass confirmation:</p>
+        <p class="text-xs text-slate-500 mb-4">Scan the code below to complete pass confirmation:</p>
         <div id="qrcode" class="flex justify-center mb-4"></div>
         <p class="text-xs font-mono font-bold text-slate-600">UPI ID: nisargshrishti@upi</p>
       </div>
@@ -107,7 +114,6 @@
   </div>
 
   <script>
-    // Set default date to tomorrow
     const tomorrow = new Date();
     tomorrow.setDate(tomorrow.getDate() + 1);
     document.getElementById('bookingDate').value = tomorrow.toISOString().split('T')[0];
@@ -120,7 +126,6 @@
 
       document.getElementById('totalDisplay').innerText = `₹${total.toLocaleString('en-IN')}`;
 
-      // Toggle card border highlighting
       const cardDay = document.getElementById('cardDay');
       const cardStay = document.getElementById('cardStay');
       if (type === 'day') {
@@ -133,6 +138,12 @@
     }
 
     function generateUPI() {
+      const phone = document.getElementById('guestPhone').value;
+      if (!phone) {
+        alert('Please enter your Mobile / WhatsApp Number before generating the QR code.');
+        return;
+      }
+
       const guests = parseInt(document.getElementById('guestCount').value) || 1;
       const type = document.querySelector('input[name="visitType"]:checked').value;
       const rate = type === 'day' ? 300 : 1200;
@@ -141,7 +152,7 @@
       const qrContainer = document.getElementById('qrcode');
       qrContainer.innerHTML = '';
       
-      const upiUrl = `upi://pay?pa=nisargshrishti@upi&pn=Nisarg%20Shrishti%20Farm&am=${total}&cu=INR`;
+      const upiUrl = `upi://pay?pa=9923000700@upi&pn=Nisarg%20Shrishti%20Farm&am=${total}&cu=INR`;
       
       new QRCode(qrContainer, {
         text: upiUrl,
