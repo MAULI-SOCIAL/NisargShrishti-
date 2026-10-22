@@ -9,71 +9,166 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { cream: '#FFF5F5', blush: '#FCE7F0', forest: '#1C3F36', sage: '#D2E3D4', terracotta: '#C86D51', gold: '#F3C86A' }
+          colors: { cream: '#FFF5F5', paper: '#FAF0E6', blush: '#FCE7F0', forest: '#1C3F36', sage: '#3E6B5C', terracotta: '#C86D51' }
         }
       }
     }
   </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-watercolor text-forest pb-20">
+<body class="bg-watercolor text-forest pb-24">
 
-  <!-- NAVIGATION BAR -->
   <nav class="floating-nav px-6 py-3 flex items-center justify-between">
-    <a href="index.html" class="flex items-center space-x-2">
-      <span class="font-serif text-2xl font-bold text-forest">Nisarg Shrishti</span>
-    </a>
+    <a href="index.html" class="font-serif text-2xl font-bold text-forest">Nisarg Shrishti</a>
     <div class="hidden md:flex space-x-6 text-sm font-bold text-slate-700">
-      <a href="index.html" class="hover:text-terracotta">Home</a>
-      <a href="activities.html" class="hover:text-terracotta">Activities</a>
-      <a href="agro-learning.html" class="hover:text-terracotta text-terracotta">Agro Learning</a>
-      <a href="about.html" class="hover:text-terracotta">Our Story</a>
-      <a href="contact.html" class="hover:text-terracotta">Contact</a>
+      <a href="index.html">Home</a>
+      <a href="activities.html">Activities</a>
+      <a href="agro-learning.html" class="text-terracotta border-b-2 border-terracotta pb-1">Agro Learning</a>
+      <a href="about.html">Our Story</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <a href="booking.html" class="bg-forest text-white px-5 py-2.5 rounded-full text-sm font-bold shadow hover:bg-emerald-950 transition">Book Visit</a>
+    <a href="booking.html" class="bg-forest text-white px-5 py-2.5 rounded-full text-sm font-bold shadow">Book Visit</a>
   </nav>
 
-  <!-- CONTENT -->
-  <div class="max-w-5xl mx-auto pt-36 px-6">
+  <div class="max-w-6xl mx-auto pt-36 px-6">
     <div class="text-center mb-12">
-      <span class="px-4 py-1.5 bg-blush text-terracotta text-xs font-bold rounded-full uppercase tracking-wider">Experiential Education</span>
-      <h1 class="font-serif text-4xl md:text-5xl font-bold text-forest mt-4 mb-4">Agro-Tourism & Hands-on Learning</h1>
-      <p class="text-slate-600 max-w-2xl mx-auto">Discover native farming techniques, organic soil health, vermicomposting, and sustainable agriculture through immersive guided tours.</p>
+      <span class="px-4 py-1.5 bg-blush text-terracotta text-xs font-bold rounded-full uppercase">Experiential Education</span>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-forest mt-3 mb-2">Agro Learning & Training</h1>
+      <p class="text-slate-600 max-w-xl mx-auto text-sm">Interactive farming modules, aquaculture, livestock care, and biodiversity conservation.</p>
     </div>
 
-    <!-- MODULE CARDS -->
-    <div class="grid md:grid-cols-3 gap-6 mb-12">
-      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm hover:shadow-md transition">
-        <div class="w-12 h-12 bg-sage/40 rounded-2xl flex items-center justify-center text-2xl mb-4">🌱</div>
-        <h3 class="font-serif text-xl font-bold text-forest mb-2">Organic Farming 101</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">Learn zero-budget natural farming methods, crop rotation, and seed preservation techniques without chemicals.</p>
+    <!-- 16 AGRO LEARNING CARDS WITH BACKGROUND IMAGES -->
+    <div class="grid md:grid-cols-4 gap-6">
+      
+      <!-- 1. Plant Varieties -->
+      <div class="flashcard-img" style="background-image: url('plant-varieties.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Exotic Plant Species</h3>
+          <p class="text-xs text-slate-200 mt-1">40+ native & rare exotic plant species education.</p>
+        </div>
       </div>
 
-      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm hover:shadow-md transition">
-        <div class="w-12 h-12 bg-blush rounded-2xl flex items-center justify-center text-2xl mb-4">🪱</div>
-        <h3 class="font-serif text-xl font-bold text-forest mb-2">Vermicomposting</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">Hands-on experience in converting organic farm waste into nutrient-rich black gold fertilizer for kitchen gardens.</p>
+      <!-- 2. Polyhouse -->
+      <div class="flashcard-img" style="background-image: url('polyhouse.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Polyhouse Tech</h3>
+          <p class="text-xs text-slate-200 mt-1">Climate controlled greenhouse cultivation.</p>
+        </div>
       </div>
 
-      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm hover:shadow-md transition">
-        <div class="w-12 h-12 bg-gold/30 rounded-2xl flex items-center justify-center text-2xl mb-4">🐝</div>
-        <h3 class="font-serif text-xl font-bold text-forest mb-2">Flora & Fauna Guided Tour</h3>
-        <p class="text-sm text-slate-600 leading-relaxed">Identify over 40+ medicinal plants, native trees, butterfly habitats, and exotic birds across our estate.</p>
+      <!-- 3. Micro-greens -->
+      <div class="flashcard-img" style="background-image: url('microgreens.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Micro-Greens</h3>
+          <p class="text-xs text-slate-200 mt-1">Superfood indoor tray farming techniques.</p>
+        </div>
       </div>
-    </div>
 
-    <!-- SCHOOL / GROUP BANNER -->
-    <div class="bg-forest text-white rounded-3xl p-8 text-center md:text-left md:flex items-center justify-between shadow-lg">
-      <div class="mb-6 md:mb-0 max-w-lg">
-        <h2 class="font-serif text-2xl font-bold mb-2">Planning a School or Group Visit?</h2>
-        <p class="text-slate-200 text-sm">We host custom educational field trips tailored to science and environmental curriculums for school students.</p>
+      <!-- 4. Seedbanks -->
+      <div class="flashcard-img" style="background-image: url('seedbank.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Heritage Seed Bank</h3>
+          <p class="text-xs text-slate-200 mt-1">Native seed preservation & germination.</p>
+        </div>
       </div>
-      <a href="booking.html" class="inline-block bg-gold text-forest font-bold px-6 py-3 rounded-full hover:bg-yellow-400 transition shadow">Book Group Field Trip</a>
+
+      <!-- 5. Permaculture -->
+      <div class="flashcard-img" style="background-image: url('permaculture.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Permaculture Design</h3>
+          <p class="text-xs text-slate-200 mt-1">Sustainable regenerative ecosystem design.</p>
+        </div>
+      </div>
+
+      <!-- 6. Pearl Farming -->
+      <div class="flashcard-img" style="background-image: url('pearl-farming.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Freshwater Pearl Farming</h3>
+          <p class="text-xs text-slate-200 mt-1">Mussel grafting & cultured pearl harvesting.</p>
+        </div>
+      </div>
+
+      <!-- 7. Aquarium -->
+      <div class="flashcard-img" style="background-image: url('aquarium.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Aquatic Eco-Aquarium</h3>
+          <p class="text-xs text-slate-200 mt-1">Freshwater aquatic life ecosystems.</p>
+        </div>
+      </div>
+
+      <!-- 8. Shrimp Farming -->
+      <div class="flashcard-img" style="background-image: url('shrimp-farming.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Freshwater Shrimp Farming</h3>
+          <p class="text-xs text-slate-200 mt-1">Pond water management & prawn culture.</p>
+        </div>
+      </div>
+
+      <!-- 9. Quail Farming -->
+      <div class="flashcard-img" style="background-image: url('quail-farming.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Quail Farming & Hatchery</h3>
+          <p class="text-xs text-slate-200 mt-1">Japanese quail care, feed & egg incubation.</p>
+        </div>
+      </div>
+
+      <!-- 10. Exotic Birds -->
+      <div class="flashcard-img" style="background-image: url('exotic-birds.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Exotic Aviary Species</h3>
+          <p class="text-xs text-slate-200 mt-1">Macaw, conure, pheasant & ostrich care.</p>
+        </div>
+      </div>
+
+      <!-- 11. Goat Rearing -->
+      <div class="flashcard-img" style="background-image: url('goat-rearing.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Goat Rearing Tech</h3>
+          <p class="text-xs text-slate-200 mt-1">Stall-fed goat management & breeding.</p>
+        </div>
+      </div>
+
+      <!-- 12. Exotic Animals -->
+      <div class="flashcard-img" style="background-image: url('exotic-animals.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Exotic Animal Sanctuary</h3>
+          <p class="text-xs text-slate-200 mt-1">Rare farm breeds & rescue enclosures.</p>
+        </div>
+      </div>
+
+      <!-- 13. Feed Management -->
+      <div class="flashcard-img" style="background-image: url('animal-feed.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Animal Feed Training</h3>
+          <p class="text-xs text-slate-200 mt-1">Organic fodder, silage & nutrition planning.</p>
+        </div>
+      </div>
+
+      <!-- 14. Vermiculture -->
+      <div class="flashcard-img" style="background-image: url('vermiculture.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Organic Vermiculture</h3>
+          <p class="text-xs text-slate-200 mt-1">Earthworm composting & bio-fertilizers.</p>
+        </div>
+      </div>
+
+      <!-- 15. Crab Culture -->
+      <div class="flashcard-img" style="background-image: url('crab-culture.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Freshwater Crab Culture</h3>
+          <p class="text-xs text-slate-200 mt-1">Inland crab rearing & habitat setups.</p>
+        </div>
+      </div>
+
+      <!-- 16. Biodiversity -->
+      <div class="flashcard-img" style="background-image: url('biodiversity.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-xl font-bold">Biodiversity Education</h3>
+          <p class="text-xs text-slate-200 mt-1">Eco-trails, soil health & insect hotels.</p>
+        </div>
+      </div>
+
     </div>
   </div>
-
-  <script src="js/config.js"></script>
-  <script src="js/i18n.js"></script>
-  <script src="js/main.js"></script>
 </body>
 </html>
