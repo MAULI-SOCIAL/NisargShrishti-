@@ -22,7 +22,20 @@ h1, h2, h3, h4, .font-serif {
   font-family: 'Playfair Display', Georgia, serif;
 }
 
-/* Glass Navbar */
+/* Small Caps Font Title Effect */
+.title-smallcaps {
+  font-variant: small-caps;
+  letter-spacing: 0.08em;
+  text-transform: lowercase;
+  animation: fadeInDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Glass Floating Navbar */
 .floating-nav {
   position: fixed;
   top: 1.25rem;
@@ -30,7 +43,7 @@ h1, h2, h3, h4, .font-serif {
   transform: translateX(-50%);
   width: 90%;
   max-width: 1100px;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 202, 193, 0.5);
   border-radius: 9999px;
@@ -38,22 +51,70 @@ h1, h2, h3, h4, .font-serif {
   box-shadow: 0 8px 32px rgba(28, 63, 54, 0.06);
 }
 
-/* Pinterest Cards */
-.pinterest-card {
-  background: #FFFFFF;
+/* Pinterest Image Flashcards */
+.flashcard-img {
+  position: relative;
   border-radius: 28px;
+  overflow: hidden;
   border: 1.5px solid rgba(220, 200, 190, 0.4);
   box-shadow: var(--soft-shadow);
-  transition: all 0.3s ease;
+  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
 }
 
-.pinterest-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 35px -5px rgba(200, 109, 81, 0.15);
+.flashcard-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28, 63, 54, 0.88) 0%, rgba(28, 63, 54, 0.3) 55%, transparent 100%);
+  transition: opacity 0.3s ease;
+}
+
+.flashcard-img:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px -10px rgba(200, 109, 81, 0.25);
   border-color: var(--terracotta);
 }
 
-/* Floating Cow Button */
+.flashcard-img:hover::before {
+  background: linear-gradient(to top, rgba(200, 109, 81, 0.9) 0%, rgba(28, 63, 54, 0.4) 60%, transparent 100%);
+}
+
+.flashcard-content {
+  position: relative;
+  z-index: 10;
+  padding: 1.5rem;
+  color: #FFFFFF;
+}
+
+/* Tiny Attention Flying Birds Around Booking Button */
+.btn-bird-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tiny-bird {
+  position: absolute;
+  pointer-events: none;
+  animation: birdOrbit 4s ease-in-out infinite alternate;
+}
+
+.tiny-bird-1 { top: -14px; left: -12px; animation-delay: 0s; }
+.tiny-bird-2 { top: -12px; right: -12px; animation-delay: 1.5s; }
+.tiny-bird-3 { bottom: -10px; right: 20px; animation-delay: 0.8s; }
+
+@keyframes birdOrbit {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(6px, -8px) scale(1.15) rotate(12deg); }
+  100% { transform: translate(-4px, 4px) scale(0.9) rotate(-8deg); }
+}
+
+/* Floating Mascot Cow Button */
 .floating-mascot-btn {
   position: fixed;
   bottom: 24px;
