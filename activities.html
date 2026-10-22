@@ -9,20 +9,20 @@
     tailwind.config = {
       theme: {
         extend: {
-          colors: { cream: '#FFF5F5', blush: '#FCE7F0', forest: '#1C3F36', sage: '#D2E3D4', terracotta: '#C86D51', gold: '#F3C86A' }
+          colors: { cream: '#FFF5F5', paper: '#FAF0E6', blush: '#FCE7F0', forest: '#1C3F36', sage: '#3E6B5C', terracotta: '#C86D51' }
         }
       }
     }
   </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-watercolor text-forest pb-20">
+<body class="bg-watercolor text-forest pb-24">
 
   <nav class="floating-nav px-6 py-3 flex items-center justify-between">
     <a href="index.html" class="font-serif text-2xl font-bold text-forest">Nisarg Shrishti</a>
     <div class="hidden md:flex space-x-6 text-sm font-bold text-slate-700">
       <a href="index.html">Home</a>
-      <a href="activities.html">Activities</a>
+      <a href="activities.html" class="text-terracotta border-b-2 border-terracotta pb-1">Activities</a>
       <a href="agro-learning.html">Agro Learning</a>
       <a href="about.html">Our Story</a>
       <a href="contact.html">Contact</a>
@@ -30,22 +30,104 @@
     <a href="booking.html" class="bg-forest text-white px-5 py-2.5 rounded-full text-sm font-bold shadow">Book Visit</a>
   </nav>
 
-  <div class="max-w-5xl mx-auto pt-36 px-6">
-    <h1 class="font-serif text-4xl md:text-5xl font-bold text-forest mb-4">Farm Activities</h1>
-    <p class="text-slate-600 mb-10">Handmade pottery, exotic bird feeding, rope adventures, and organic farming workshops.</p>
+  <div class="max-w-6xl mx-auto pt-36 px-6">
+    <div class="text-center mb-12">
+      <span class="px-4 py-1.5 bg-blush text-terracotta text-xs font-bold rounded-full uppercase">Fun & Recreation</span>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-forest mt-3 mb-2">Farm Activities & Experiences</h1>
+      <p class="text-slate-600 max-w-xl mx-auto text-sm">Action-packed village games, pottery, animal interactions, and peaceful farm dining.</p>
+    </div>
 
-    <div class="grid md:grid-cols-2 gap-6">
-      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm">
-        <h3 class="font-serif text-2xl font-bold text-forest mb-2">Pottery & Clay Art</h3>
-        <p class="text-sm text-slate-600 mb-4">Learn traditional potter's wheel techniques from local village artisans. Take your hand-crafted clay pot home!</p>
-        <span class="px-3 py-1 bg-blush text-terracotta text-xs font-bold rounded-full">All Ages</span>
+    <!-- 11 ACTIVITIES CARDS WITH BACKGROUND IMAGES -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- 1. Kids Playzone -->
+      <div class="flashcard-img" style="background-image: url('kids-playzone.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Kids Playzone & PS Area</h3>
+          <p class="text-xs text-slate-200 mt-1">Outdoor adventure play area & PlayStation gaming lounge.</p>
+        </div>
       </div>
 
-      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm">
-        <h3 class="font-serif text-2xl font-bold text-forest mb-2">Animal Petting & Feeding</h3>
-        <p class="text-sm text-slate-600 mb-4">Interact safely with rabbits, goats, ostriches, and friendly farm cows in guided enclosures.</p>
-        <span class="px-3 py-1 bg-blush text-terracotta text-xs font-bold rounded-full">Kids Favorite</span>
+      <!-- 2. Archery -->
+      <div class="flashcard-img" style="background-image: url('archery.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Archery Target Range</h3>
+          <p class="text-xs text-slate-200 mt-1">Guided bow and arrow target practice for all ages.</p>
+        </div>
       </div>
+
+      <!-- 3. Nest Making -->
+      <div class="flashcard-img" style="background-image: url('nest-making.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Eco Nest Making</h3>
+          <p class="text-xs text-slate-200 mt-1">Craft natural bird nests using twigs, jute & coconut husk.</p>
+        </div>
+      </div>
+
+      <!-- 4. Tree Planting -->
+      <div class="flashcard-img" style="background-image: url('tree-planting.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Tree Planting & Caring</h3>
+          <p class="text-xs text-slate-200 mt-1">Plant your own sapling on our farm with custom name tags.</p>
+        </div>
+      </div>
+
+      <!-- 5. Animal Petting -->
+      <div class="flashcard-img" style="background-image: url('animal-petting.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Animal Petting & Feeding</h3>
+          <p class="text-xs text-slate-200 mt-1">Interact with rabbits, goats, calves & ostriches.</p>
+        </div>
+      </div>
+
+      <!-- 6. Pottery -->
+      <div class="flashcard-img" style="background-image: url('pottery-clay.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Pottery & Clay Toys</h3>
+          <p class="text-xs text-slate-200 mt-1">Learn potter's wheel techniques & handcraft clay items.</p>
+        </div>
+      </div>
+
+      <!-- 7. Recreational -->
+      <div class="flashcard-img" style="background-image: url('recreational.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Recreational Village Games</h3>
+          <p class="text-xs text-slate-200 mt-1">Tractor rides, rope climbing, and traditional games.</p>
+        </div>
+      </div>
+
+      <!-- 8. Camping -->
+      <div class="flashcard-img" style="background-image: url('camping.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Starlit Camping</h3>
+          <p class="text-xs text-slate-200 mt-1">Overnight stay in comfortable waterproof tents.</p>
+        </div>
+      </div>
+
+      <!-- 9. Campfire -->
+      <div class="flashcard-img" style="background-image: url('campfire.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Campfire & Folk Music</h3>
+          <p class="text-xs text-slate-200 mt-1">Evening bonfires with roasted corn and music sessions.</p>
+        </div>
+      </div>
+
+      <!-- 10. Meditation -->
+      <div class="flashcard-img" style="background-image: url('meditation.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Nature Meditation</h3>
+          <p class="text-xs text-slate-200 mt-1">Peaceful open-air meditation under ancient banyan trees.</p>
+        </div>
+      </div>
+
+      <!-- 11. Farm Dining -->
+      <div class="flashcard-img" style="background-image: url('farm-dining.jpg');">
+        <div class="flashcard-content">
+          <h3 class="font-serif text-2xl font-bold">Farm-Fresh Village Dining</h3>
+          <p class="text-xs text-slate-200 mt-1">Unlimited authentic Chulha-cooked Maharashtrian buffet.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </body>
