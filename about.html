@@ -6,56 +6,128 @@
   <title>Our Story | Nisarg Shrishti</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = { theme: { extend: { colors: { cream: '#FFF5F5', blush: '#FCE7F0', forest: '#1C3F36', sage: '#D2E3D4', terracotta: '#C86D51' } } } }
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { cream: '#FFF5F5', paper: '#FAF0E6', blush: '#FCE7F0', forest: '#1C3F36', sage: '#3E6B5C', terracotta: '#C86D51', gold: '#F3C86A' }
+        }
+      }
+    }
   </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-watercolor text-forest pb-20">
-  <nav class="floating-nav px-6 py-3 flex items-center justify-between">
-    <a href="index.html" class="font-serif text-2xl font-bold text-forest">Nisarg Shrishti</a>
-    <div class="hidden md:flex space-x-6 text-sm font-bold text-slate-700">
-      <a href="index.html">Home</a>
-      <a href="activities.html">Activities</a>
-      <a href="about.html">Our Story</a>
-      <a href="contact.html">Contact</a>
+<body class="bg-watercolor text-forest pb-24">
+
+  <!-- UNIFIED NAVBAR -->
+  <nav class="floating-nav px-5 py-2.5 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="logo.jpg" alt="Nisarg Shrishti Logo" class="w-11 h-11 rounded-full object-cover border-2 border-sage/40 shadow-sm">
+      <span class="font-serif text-xl md:text-2xl font-bold text-forest tracking-tight">Nisarg Shrishti</span>
+    </a>
+
+    <div class="hidden md:flex space-x-7 text-sm font-semibold text-slate-700">
+      <a href="index.html" class="hover:text-terracotta transition">Home</a>
+      <a href="agro-learning.html" class="hover:text-terracotta transition">Agro Learning</a>
+      <a href="activities.html" class="hover:text-terracotta transition">Activities</a>
+      <a href="about.html" class="text-terracotta border-b-2 border-terracotta pb-1">Our Story</a>
+      <a href="contact.html" class="hover:text-terracotta transition">Contact</a>
     </div>
-    <a href="booking.html" class="bg-forest text-white px-5 py-2.5 rounded-full text-sm font-bold shadow">Book Visit</a>
+
+    <div class="flex items-center gap-2 md:gap-3">
+      <a href="booking.html" class="bg-forest text-white px-4 py-2 rounded-full text-xs font-bold shadow-md hover:bg-emerald-950 transition">Book Visit</a>
+      <div class="flex items-center bg-blush px-3 py-1.5 rounded-full border border-terracotta/20 text-xs font-bold text-terracotta space-x-1">
+        <button onclick="changeLanguage('en')">EN</button>
+        <span>/</span>
+        <button onclick="changeLanguage('hi')">हिन्दी</button>
+        <span>/</span>
+        <button onclick="changeLanguage('mr')">मराठी</button>
+      </div>
+    </div>
   </nav>
 
+  <!-- STORY CONTENT CONTAINER -->
   <div class="max-w-4xl mx-auto pt-36 px-6">
-    <h1 class="font-serif text-4xl font-bold text-forest mb-4">Our Story & Heritage</h1>
-    <p class="text-slate-600 leading-relaxed mb-6">Our Story
-Every journey begins with a deep connection to the roots.
+    <div class="text-center mb-10">
+      <span class="px-4 py-1.5 bg-blush text-terracotta text-xs font-bold rounded-full uppercase tracking-wider">Rooted In Passion</span>
+      <h1 class="font-serif text-4xl md:text-5xl font-bold text-forest mt-3">Our Story</h1>
+      <p class="text-lg text-terracotta font-serif italic mt-2">Every journey begins with a deep connection to the roots.</p>
+    </div>
 
-My name is Sagar Pathare. Born and raised in a farming family here in Pune, my bond with the land was forged early in life. For my family, agriculture was not merely a profession; it was a way of living, observing, and respecting the rhythmic heartbeat of Mother Earth. Growing up, I learned to listen to the whisper of the winds through the fields, to appreciate the quiet hard work of the earth, and to cherish every creature—big or small—that calls nature its home.
+    <!-- MAIN STORY CARD -->
+    <div class="pinterest-card p-8 md:p-12 bg-white space-y-6 text-slate-700 leading-relaxed text-base md:text-lg mb-12">
+      <p>
+        <span class="font-serif text-2xl font-bold text-forest">My name is Sagar Pathare.</span> Born and raised in a farming family here in Pune, my bond with the land was forged early in life. For my family, agriculture was not merely a profession; it was a way of living, observing, and respecting the rhythmic heartbeat of Mother Earth. Growing up, I learned to listen to the whisper of the winds through the fields, to appreciate the quiet hard work of the earth, and to cherish every creature—big or small—that calls nature its home.
+      </p>
 
-What started as a personal passion and a peaceful retreat soon grew into a deeper vision. In a world moving at a frantic pace—where concrete landscapes replace open fields and screens replace the beauty of blue skies—I felt a compelling desire to pause and share the magic I had experienced with everyone else. I wanted children, students, families, and city dwellers to feel the quiet joy of sinking their feet into warm earth, breathing clean rural air, and reconnecting with the living world around them.
+      <p>
+        What started as a personal passion and a peaceful retreat soon grew into a deeper vision. In a world moving at a frantic pace—where concrete landscapes replace open fields and screens replace the beauty of blue skies—I felt a compelling desire to pause and share the magic I had experienced with everyone else. I wanted children, students, families, and city dwellers to feel the quiet joy of sinking their feet into warm earth, breathing clean rural air, and reconnecting with the living world around them.
+      </p>
 
-That dream took shape as Nisarg Srishti Agro-Tourism.
+      <p class="font-serif text-xl font-bold text-terracotta italic border-l-4 border-terracotta pl-4 py-1">
+        That dream took shape as Nisarg Shrishti Agro-Tourism.
+      </p>
 
-Where Passion Meets Preservation
-Located on the picturesque outskirts of Pune, Nisarg Srishti is more than just a tranquil getaway; it is a living sanctuary created to inspire curiosity, learning, and environmental stewardship.
+      <h2 class="font-serif text-2xl font-bold text-forest pt-4">Where Passion Meets Preservation</h2>
+      <p>
+        Located on the picturesque outskirts of Pune, Nisarg Shrishti is more than just a tranquil getaway; it is a living sanctuary created to inspire curiosity, learning, and environmental stewardship.
+      </p>
 
-Here, nature meets wonder:
+      <div class="grid md:grid-cols-2 gap-4 pt-2">
+        <div class="p-5 bg-paper rounded-2xl border border-sage/30">
+          <h3 class="font-serif text-lg font-bold text-forest mb-1">🌱 Exotic & Rare Flora</h3>
+          <p class="text-sm text-slate-600">Walk through lush green trails populated by rare indigenous plant species, vibrant medicinal flora, and captivating exotic foliage.</p>
+        </div>
+        <div class="p-5 bg-paper rounded-2xl border border-sage/30">
+          <h3 class="font-serif text-lg font-bold text-forest mb-1">🦜 A Vibrant Aviary</h3>
+          <p class="text-sm text-slate-600">Listen to the symphony of nature. Our aviary houses fascinating native and exotic bird species, filling the morning air with colors and calls.</p>
+        </div>
+        <div class="p-5 bg-paper rounded-2xl border border-sage/30">
+          <h3 class="font-serif text-lg font-bold text-forest mb-1">🐐 Animal Sanctuary</h3>
+          <p class="text-sm text-slate-600">Experience warm, interactive moments with gentle farm animals in an environment designed with love, care, and respect.</p>
+        </div>
+        <div class="p-5 bg-paper rounded-2xl border border-sage/30">
+          <h3 class="font-serif text-lg font-bold text-forest mb-1">📚 Learning Beyond Textbooks</h3>
+          <p class="text-sm text-slate-600">We invite students and families for hands-on agricultural learning, biodiversity conservation, and sustainable farming practices.</p>
+        </div>
+      </div>
 
-Exotic & Rare Flora: Walk through lush green trails populated by rare indigenous plant species, vibrant medicinal flora, and captivating exotic foliage gathered to showcase the rich diversity of plant life.
+      <h2 class="font-serif text-2xl font-bold text-forest pt-4">Our Mission</h2>
+      <p>
+        At Nisarg Shrishti, our mission is simple yet profound: <strong>To educate, inspire, and protect.</strong>
+      </p>
+      <p>
+        We believe that true conservation begins with love, and love begins with experience. When a child feeds a bird, marvels at a rare blooming flower, or learns how a single seed grows into a bountiful harvest, a seed of respect for our planet is planted in their heart forever.
+      </p>
+      <p>
+        Whether you are looking to step away from the urban bustle for a day of peaceful relaxation, bring your children for an enriching educational experience, or simply immerse yourself in the vibrant colors of nature, Nisarg Shrishti opens its arms to welcome you.
+      </p>
 
-A Vibrant Aviary: Listen to the symphony of nature. Our curated aviary houses fascinating native and exotic bird species, filling the morning air with a melody of colors and calls.
-
-Animal Sanctuary & Interaction: Experience warm, interactive moments with gentle farm animals and learn about rare wildlife species in an environment designed with love, care, and utmost respect for animal welfare.
-
-Learning Beyond Textbooks: We warmly invite school groups, university students, and nature enthusiasts to experience hands-on agricultural learning, biodiversity conservation, and sustainable farming practices first-hand.
-
-Our Mission
-At Nisarg Srishti, our mission is simple yet profound: To educate, inspire, and protect.
-
-We believe that true conservation begins with love, and love begins with experience. When a child feeds a bird, marvels at a rare blooming flower, or learns how a single seed grows into a bountiful harvest, a seed of respect for our planet is planted in their heart forever.
-
-Whether you are looking to step away from the urban bustle for a day of peaceful relaxation, bring your children for an enriching educational experience, or simply immerse yourself in the vibrant colors of nature, Nisarg Srishti opens its arms to welcome you.
-
-"Come, step into our world. Feel the land, meet its living wonders, and leave with a heart full of joy and a renewed love for nature."
-
-— Sagar Pathare, Founder</p>
+      <blockquote class="bg-blush/60 p-6 rounded-2xl border-l-4 border-terracotta text-forest font-serif italic text-lg my-6">
+        "Come, step into our world. Feel the land, meet its living wonders, and leave with a heart full of joy and a renewed love for nature."
+        <span class="block font-bold text-terracotta not-italic text-sm mt-2">— Sagar Pathare, Founder</span>
+      </blockquote>
+    </div>
   </div>
+
+  <!-- FLOATING BOTTOM RIGHT WIDGETS -->
+  <div class="bottom-widgets-container">
+    <a href="https://wa.me/919923000700?text=Hello!%20I%20want%20to%20inquire%20about%20booking%20a%20visit%20to%20Nisarg%20Shrishti." target="_blank" class="whatsapp-icon-btn" title="Chat on WhatsApp">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.481 1.332 4.993l-1.417 5.176 5.297-1.389c1.458.795 3.102 1.214 4.775 1.215h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.667-1.037-5.176-2.922-7.062a9.923 9.923 0 0 0-7.058-2.932zm0 1.625c4.61 0 8.363 3.753 8.364 8.359 0 2.233-.868 4.332-2.447 5.912a8.303 8.303 0 0 1-5.914 2.451h-.003c-1.472 0-2.916-.39-4.177-1.127l-.3-.178-3.108.815.829-3.029-.196-.312a8.318 8.318 0 0 1-1.275-4.382c.001-4.606 3.755-8.36 8.362-8.36z"/>
+      </svg>
+    </a>
+
+    <a href="booking.html" class="floating-mascot-btn">
+      <div class="w-10 h-10 bg-blush rounded-full flex items-center justify-center text-2xl shadow-inner">🐮</div>
+      <div class="text-left">
+        <span class="block text-[10px] font-bold text-terracotta uppercase tracking-wider">Reserve Spot</span>
+        <span class="block text-xs font-extrabold text-forest">Book Visit</span>
+      </div>
+    </a>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
