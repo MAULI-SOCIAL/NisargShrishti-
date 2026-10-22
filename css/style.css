@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 :root {
   --bg-cream: #FFF5F5;
@@ -7,7 +7,6 @@
   --sage-green: #3E6B5C;
   --deep-forest: #1C3F36;
   --terracotta: #C86D51;
-  --warm-gold: #F3C86A;
   --soft-shadow: 0 10px 30px -5px rgba(200, 109, 81, 0.1);
 }
 
@@ -17,14 +16,13 @@ body {
   background-image: radial-gradient(#E8D5C4 0.75px, transparent 0.75px);
   background-size: 24px 24px;
   color: var(--deep-forest);
-  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, .font-serif {
   font-family: 'Playfair Display', Georgia, serif;
 }
 
-/* Floating Glass Navbar */
+/* Glass Navbar */
 .floating-nav {
   position: fixed;
   top: 1.25rem;
@@ -32,7 +30,7 @@ h1, h2, h3, h4, .font-serif {
   transform: translateX(-50%);
   width: 90%;
   max-width: 1100px;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 202, 193, 0.5);
   border-radius: 9999px;
@@ -40,104 +38,22 @@ h1, h2, h3, h4, .font-serif {
   box-shadow: 0 8px 32px rgba(28, 63, 54, 0.06);
 }
 
-/* Pinterest Style Organic Cards */
+/* Pinterest Cards */
 .pinterest-card {
   background: #FFFFFF;
   border-radius: 28px;
   border: 1.5px solid rgba(220, 200, 190, 0.4);
   box-shadow: var(--soft-shadow);
-  transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
 .pinterest-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px -10px rgba(200, 109, 81, 0.18);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px -5px rgba(200, 109, 81, 0.15);
   border-color: var(--terracotta);
 }
 
-/* Animated Flying Macaws & Birds */
-@keyframes flyAcross {
-  0% { transform: translate(-100px, 0) scale(0.8); }
-  50% { transform: translate(50vw, -30px) scale(1); }
-  100% { transform: translate(110vw, 10px) scale(0.85); }
-}
-
-@keyframes birdWingFlap {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(-25deg); }
-}
-
-.bird-flock {
-  position: fixed;
-  top: 80px;
-  left: 0;
-  width: 100%;
-  height: 120px;
-  pointer-events: none;
-  z-index: 40;
-}
-
-.macaw-1 {
-  position: absolute;
-  animation: flyAcross 22s linear infinite;
-}
-
-.macaw-2 {
-  position: absolute;
-  top: 40px;
-  animation: flyAcross 28s linear infinite 5s;
-}
-
-.wing {
-  transform-origin: center bottom;
-  animation: birdWingFlap 0.4s ease-in-out infinite alternate;
-}
-
-/* Animated Running Ostrich */
-@keyframes ostrichRun {
-  0% { transform: translateX(100%); }
-  100% { transform: translateX(-120vw); }
-}
-
-@keyframes legStride {
-  0%, 100% { transform: rotate(20deg); }
-  50% { transform: rotate(-20deg); }
-}
-
-.running-ostrich {
-  position: relative;
-  animation: ostrichRun 16s linear infinite;
-}
-
-.ostrich-leg {
-  transform-origin: top center;
-  animation: legStride 0.3s ease-in-out infinite alternate;
-}
-
-/* Swimming & Jumping Fish */
-@keyframes fishSwim {
-  0% { transform: translate(0, 0) rotate(0deg); }
-  25% { transform: translate(60px, -15px) rotate(5deg); }
-  50% { transform: translate(120px, 0px) rotate(0deg); }
-  75% { transform: translate(60px, 15px) rotate(-5deg); }
-  100% { transform: translate(0, 0) rotate(0deg); }
-}
-
-@keyframes fishJump {
-  0%, 80%, 100% { transform: translateY(0) rotate(0deg); }
-  90% { transform: translateY(-45px) rotate(-15deg); }
-}
-
-.koi-fish {
-  animation: fishSwim 12s ease-in-out infinite;
-}
-
-.koi-fish-jump {
-  animation: fishJump 6s ease-in-out infinite;
-}
-
-/* Floating Mascot Cow Button */
+/* Floating Cow Button */
 .floating-mascot-btn {
   position: fixed;
   bottom: 24px;
@@ -150,28 +66,12 @@ h1, h2, h3, h4, .font-serif {
   padding: 8px 20px 8px 12px;
   box-shadow: 0 12px 30px rgba(200, 109, 81, 0.25);
   display: flex;
-  items-center: center;
+  align-items: center;
   gap: 12px;
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-  animation: floatBounce 3s ease-in-out infinite;
+  transition: transform 0.2s ease;
 }
 
 .floating-mascot-btn:hover {
-  transform: scale(1.08) translateY(-4px);
+  transform: scale(1.05);
   background: var(--blush-pink);
-}
-
-@keyframes floatBounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-/* Seedling Grow Animation */
-@keyframes sproutGrow {
-  0% { transform: scale(0.8) translateY(10px); opacity: 0.5; }
-  100% { transform: scale(1) translateY(0); opacity: 1; }
-}
-
-.sprout-anim {
-  animation: sproutGrow 1.5s ease-out infinite alternate;
 }
