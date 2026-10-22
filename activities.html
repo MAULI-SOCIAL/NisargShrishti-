@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Farm Activities | Nisarg Shrishti</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { cream: '#FFF5F5', blush: '#FCE7F0', forest: '#1C3F36', sage: '#D2E3D4', terracotta: '#C86D51', gold: '#F3C86A' }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-watercolor text-forest pb-20">
+
+  <nav class="floating-nav px-6 py-3 flex items-center justify-between">
+    <a href="index.html" class="font-serif text-2xl font-bold text-forest">Nisarg Shrishti</a>
+    <div class="hidden md:flex space-x-6 text-sm font-bold text-slate-700">
+      <a href="index.html">Home</a>
+      <a href="activities.html">Activities</a>
+      <a href="agro-learning.html">Agro Learning</a>
+      <a href="about.html">Our Story</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="booking.html" class="bg-forest text-white px-5 py-2.5 rounded-full text-sm font-bold shadow">Book Visit</a>
+  </nav>
+
+  <div class="max-w-5xl mx-auto pt-36 px-6">
+    <h1 class="font-serif text-4xl md:text-5xl font-bold text-forest mb-4">Farm Activities</h1>
+    <p class="text-slate-600 mb-10">Handmade pottery, exotic bird feeding, rope adventures, and organic farming workshops.</p>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm">
+        <h3 class="font-serif text-2xl font-bold text-forest mb-2">Pottery & Clay Art</h3>
+        <p class="text-sm text-slate-600 mb-4">Learn traditional potter's wheel techniques from local village artisans. Take your hand-crafted clay pot home!</p>
+        <span class="px-3 py-1 bg-blush text-terracotta text-xs font-bold rounded-full">All Ages</span>
+      </div>
+
+      <div class="bg-white p-6 rounded-3xl border border-sage shadow-sm">
+        <h3 class="font-serif text-2xl font-bold text-forest mb-2">Animal Petting & Feeding</h3>
+        <p class="text-sm text-slate-600 mb-4">Interact safely with rabbits, goats, ostriches, and friendly farm cows in guided enclosures.</p>
+        <span class="px-3 py-1 bg-blush text-terracotta text-xs font-bold rounded-full">Kids Favorite</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
