@@ -21,14 +21,13 @@
 </head>
 <body class="bg-watercolor text-forest pb-24">
 
-  <!-- FLOATING NAVBAR WITH LOGO & SWAPPED LANGUAGE SELECTOR -->
+  <!-- FLOATING NAVBAR -->
   <nav class="floating-nav px-5 py-2.5 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3">
       <img src="logo.jpg" alt="Nisarg Shrishti Logo" class="w-11 h-11 rounded-full object-cover border-2 border-sage/40 shadow-sm">
       <span class="font-serif text-xl md:text-2xl font-bold text-forest tracking-tight">Nisarg Shrishti</span>
     </a>
 
-    <!-- Menu order: Agro Learning shifted to left of Activities -->
     <div class="hidden md:flex space-x-7 text-sm font-semibold text-slate-700">
       <a href="index.html" class="text-terracotta border-b-2 border-terracotta pb-1" data-i18n="nav_home">Home</a>
       <a href="agro-learning.html" class="hover:text-terracotta transition" data-i18n="nav_learning">Agro Learning</a>
@@ -37,11 +36,9 @@
       <a href="contact.html" class="hover:text-terracotta transition" data-i18n="nav_contact">Contact</a>
     </div>
 
-    <!-- Swapped Placement: Language Selector in top right corner -->
     <div class="flex items-center gap-2 md:gap-3">
       <a href="booking.html" class="bg-forest text-white px-4 py-2 rounded-full text-xs font-bold shadow-md hover:bg-emerald-950 transition" data-i18n="nav_book">Book Visit</a>
       
-      <!-- Working EN / HI / MR Language Switcher -->
       <div class="flex items-center bg-blush px-3 py-1.5 rounded-full border border-terracotta/20 text-xs font-bold text-terracotta space-x-1">
         <button onclick="changeLanguage('en')" class="hover:underline focus:outline-none">EN</button>
         <span>/</span>
@@ -53,25 +50,20 @@
   </nav>
 
   <!-- HERO SECTION WITH LOGO UNDER TITLE IN PICTURE -->
-<section class="max-w-6xl mx-auto pt-32 px-6 text-center">
-  
-  <!-- Title Cover Image Container -->
-  <div class="relative w-full h-[360px] md:h-[460px] rounded-[36px] overflow-hidden shadow-xl mb-10 border-2 border-sage/30">
-    <img src="plexus.jpg" alt="Nisarg Shrishti Agro Tourism" class="w-full h-full object-cover">
-    <div class="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/40 to-transparent flex flex-col items-center justify-center p-6 text-center">
-      <!-- Small-Caps Title -->
-      <h1 id="heroTitle" class="font-serif text-3xl md:text-5xl font-bold text-white tracking-wider title-smallcaps drop-shadow-md mb-4">
-        Nisarg Shrishti Agro Tourism
-      </h1>
-      <!-- ENLARGED LOGO BADGE UNDER TITLE -->
-      <img src="logo.jpg" alt="Nisarg Shrishti Badge" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white/90 shadow-2xl object-cover transform hover:scale-105 transition duration-300">
+  <section class="max-w-6xl mx-auto pt-32 px-6 text-center">
+    
+    <div class="relative w-full h-[360px] md:h-[460px] rounded-[36px] overflow-hidden shadow-xl mb-10 border-2 border-sage/30">
+      <img src="plexus.jpg" alt="Nisarg Shrishti Agro Tourism" class="w-full h-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/40 to-transparent flex flex-col items-center justify-center p-6 text-center">
+        <h1 id="heroTitle" class="font-serif text-3xl md:text-5xl font-bold text-white tracking-wider title-smallcaps drop-shadow-md mb-4">
+          Nisarg Shrishti Agro Tourism
+        </h1>
+        <img src="logo.jpg" alt="Nisarg Shrishti Badge" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white/90 shadow-2xl object-cover transform hover:scale-105 transition duration-300">
+      </div>
     </div>
-  </div>
 
     <!-- CALL TO ACTION BUTTONS WITH FLYING BIRDS ANIMATION -->
     <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mb-16">
-      
-      <!-- Booking Button Wrapper with Orbiting Birds -->
       <div class="btn-bird-wrapper w-full sm:w-auto">
         <svg class="tiny-bird tiny-bird-1" width="26" height="22" viewBox="0 0 50 40">
           <path fill="#C86D51" d="M5,20 Q20,5 35,20 Q20,35 5,20 Z M35,20 L45,10 L42,20 L45,30 Z"/>
@@ -94,14 +86,49 @@
       </a>
     </div>
 
-    <!-- FLASHCARDS GRID -->
+    <!-- REORDERED GRID: AGRO LEARNING FIRST, FOLLOWED BY ACTIVITIES -->
     <div class="text-left mb-6">
       <h2 id="sectionHighlights" class="font-serif text-3xl font-bold text-forest">Farm Experiences & Learning Highlights</h2>
-      <p class="text-slate-600 text-sm">Explore our mix of recreational activities and educational modules.</p>
+      <p class="text-slate-600 text-sm">Explore our educational modules and recreational activities.</p>
     </div>
 
-    <div class="grid md:grid-cols-4 gap-6 text-left">
-      <div class="flashcard-img" style="background-image: url('aviary.jpg');">
+    <div class="grid md:grid-cols-4 gap-6 text-left mb-10">
+      
+      <!-- 1. AGRO LEARNING: Polyhouse Tech -->
+      <div class="flashcard-img" style="background-image: url('polyhouse-card.jpg');">
+        <div class="flashcard-content">
+          <span class="px-3 py-1 bg-sage/90 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Agro Learning</span>
+          <h3 class="font-serif text-xl font-bold">Polyhouse Tech</h3>
+          <p class="text-xs text-slate-200 mt-1">Climate controlled cultivation of exotic flora.</p>
+        </div>
+      </div>
+
+      <!-- 2. AGRO LEARNING: Micro-Greens -->
+      <div class="flashcard-img" style="background-image: url('microgreens-card.jpg');">
+        <div class="flashcard-content">
+          <span class="px-3 py-1 bg-sage/90 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Agro Learning</span>
+          <h3 class="font-serif text-xl font-bold">Micro-Greens</h3>
+          <p class="text-xs text-slate-200 mt-1">Nutrient-dense indoor farming techniques.</p>
+        </div>
+      </div>
+
+      <!-- 3. AGRO LEARNING: Permaculture (WITH VIDEO) -->
+      <div class="flashcard-img relative overflow-hidden" style="background-image: url('permaculture-card.jpg');">
+        <video autoplay loop muted playsinline class="card-video-bg">
+          <source src="permaculture.mp4" type="video/mp4">
+        </video>
+        <div class="flashcard-content">
+          <span class="px-3 py-1 bg-sage/90 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Agro Learning</span>
+          <h3 class="font-serif text-xl font-bold">Permaculture</h3>
+          <p class="text-xs text-slate-200 mt-1">Self-sustaining regenerative farm design.</p>
+        </div>
+      </div>
+
+      <!-- 4. ACTIVITY: Exotic Aviary (WITH VIDEO) -->
+      <div class="flashcard-img relative overflow-hidden" style="background-image: url('aviary.jpg');">
+        <video autoplay loop muted playsinline class="card-video-bg">
+          <source src="aviary.mp4" type="video/mp4">
+        </video>
         <div class="flashcard-content">
           <span class="px-3 py-1 bg-terracotta/80 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Activity</span>
           <h3 class="font-serif text-xl font-bold">Exotic Aviary</h3>
@@ -109,7 +136,11 @@
         </div>
       </div>
 
-      <div class="flashcard-img" style="background-image: url('pottery.jpg');">
+      <!-- 5. ACTIVITY: Pottery Workshop (WITH VIDEO) -->
+      <div class="flashcard-img relative overflow-hidden" style="background-image: url('pottery.jpg');">
+        <video autoplay loop muted playsinline class="card-video-bg">
+          <source src="pottery.mp4" type="video/mp4">
+        </video>
         <div class="flashcard-content">
           <span class="px-3 py-1 bg-terracotta/80 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Activity</span>
           <h3 class="font-serif text-xl font-bold">Pottery Workshop</h3>
@@ -117,7 +148,11 @@
         </div>
       </div>
 
+      <!-- 6. ACTIVITY: Aquatic Koi Ponds (WITH VIDEO & JUMPING FISH) -->
       <div class="flashcard-img relative overflow-hidden" style="background-image: url('aquatic.jpg');">
+        <video autoplay loop muted playsinline class="card-video-bg">
+          <source src="aquatic.mp4" type="video/mp4">
+        </video>
         <div class="absolute top-4 right-4 koi-fish-jump opacity-90 z-20">
           <svg width="42" height="26" viewBox="0 0 50 30">
             <path fill="#F3C86A" d="M5,15 Q20,2 35,15 Q20,28 5,15 Z M35,15 L45,5 L42,15 L45,25 Z"/>
@@ -131,30 +166,7 @@
         </div>
       </div>
 
-      <div class="flashcard-img" style="background-image: url('polyhouse-card.jpg');">
-        <div class="flashcard-content">
-          <span class="px-3 py-1 bg-sage/90 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Agro Learning</span>
-          <h3 class="font-serif text-xl font-bold">Polyhouse Tech</h3>
-          <p class="text-xs text-slate-200 mt-1">Climate controlled cultivation of exotic flora.</p>
-        </div>
-      </div>
-
-      <div class="flashcard-img" style="background-image: url('microgreens-card.jpg');">
-        <div class="flashcard-content">
-          <span class="px-3 py-1 bg-sage/90 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Agro Learning</span>
-          <h3 class="font-serif text-xl font-bold">Micro-Greens</h3>
-          <p class="text-xs text-slate-200 mt-1">Nutrient-dense indoor farming techniques.</p>
-        </div>
-      </div>
-
-      <div class="flashcard-img" style="background-image: url('permaculture-card.jpg');">
-        <div class="flashcard-content">
-          <span class="px-3 py-1 bg-sage/90 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Agro Learning</span>
-          <h3 class="font-serif text-xl font-bold">Permaculture</h3>
-          <p class="text-xs text-slate-200 mt-1">Self-sustaining regenerative farm design.</p>
-        </div>
-      </div>
-
+      <!-- 7. ACTIVITY: Archery Range -->
       <div class="flashcard-img" style="background-image: url('archery-card.jpg');">
         <div class="flashcard-content">
           <span class="px-3 py-1 bg-terracotta/80 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Activity</span>
@@ -163,6 +175,7 @@
         </div>
       </div>
 
+      <!-- 8. STAY EXPERIENCE: Starlit Camping -->
       <div class="flashcard-img" style="background-image: url('camping-card.jpg');">
         <div class="flashcard-content">
           <span class="px-3 py-1 bg-terracotta/80 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Stay Experience</span>
@@ -170,19 +183,29 @@
           <p class="text-xs text-slate-200 mt-1">Overnight camping tents & evening bonfires.</p>
         </div>
       </div>
+
     </div>
+
+    <!-- VIEW MORE BUTTONS SECTION -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 my-8">
+      <a href="agro-learning.html" class="px-8 py-3.5 bg-forest text-white font-bold rounded-full shadow-md hover:bg-emerald-950 transition text-sm flex items-center gap-2">
+        <span>🌱 Explore All Agro Learning Modules →</span>
+      </a>
+      <a href="activities.html" class="px-8 py-3.5 bg-blush text-terracotta font-bold rounded-full border border-terracotta/30 hover:bg-terracotta hover:text-white transition text-sm flex items-center gap-2">
+        <span>🎯 View All Farm Activities →</span>
+      </a>
+    </div>
+
   </section>
 
-  <!-- BOTTOM RIGHT FLOATING CONTAINER: WHATSAPP LOGO WIDGET + COW MASCOT BUTTON -->
+  <!-- FLOATING BOTTOM RIGHT WIDGETS -->
   <div class="bottom-widgets-container">
-    <!-- WhatsApp Icon Only Widget -->
     <a href="https://wa.me/919923000700?text=Hello!%20I%20want%20to%20inquire%20about%20booking%20a%20visit%20to%20Nisarg%20Shrishti." target="_blank" class="whatsapp-icon-btn" title="Chat on WhatsApp">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.481 1.332 4.993l-1.417 5.176 5.297-1.389c1.458.795 3.102 1.214 4.775 1.215h.004c5.505 0 9.988-4.478 9.989-9.985 0-2.667-1.037-5.176-2.922-7.062a9.923 9.923 0 0 0-7.058-2.932zm0 1.625c4.61 0 8.363 3.753 8.364 8.359 0 2.233-.868 4.332-2.447 5.912a8.303 8.303 0 0 1-5.914 2.451h-.003c-1.472 0-2.916-.39-4.177-1.127l-.3-.178-3.108.815.829-3.029-.196-.312a8.318 8.318 0 0 1-1.275-4.382c.001-4.606 3.755-8.36 8.362-8.36z"/>
       </svg>
     </a>
 
-    <!-- Reserve Spot Cow Button -->
     <a href="booking.html" class="floating-mascot-btn">
       <div class="w-10 h-10 bg-blush rounded-full flex items-center justify-center text-2xl shadow-inner">🐮</div>
       <div class="text-left">
