@@ -34,7 +34,7 @@ h1, h2, h3, h4, .font-serif {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Glass Floating Navbar & Mobile Alignment Fix */
+/* Glass Floating Navbar */
 .floating-nav {
   position: fixed;
   top: 0.75rem;
@@ -45,29 +45,56 @@ h1, h2, h3, h4, .font-serif {
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 202, 193, 0.5);
-  border-radius: 28px;
+  border-radius: 24px;
   z-index: 100;
   box-shadow: 0 8px 32px rgba(28, 63, 54, 0.08);
 }
 
+/* Mobile Responsive Layout Fix */
 @media (max-width: 768px) {
   .floating-nav {
-    padding: 6px 12px !important;
-    border-radius: 20px;
+    padding: 10px 14px !important;
+    flex-wrap: wrap !important;
   }
-  
-  .floating-nav a span {
-    font-size: 0.95rem !important;
+
+  /* Make navigation links visible as a horizontal scrollable strip on mobile */
+  .floating-nav .hidden.md\:flex {
+    display: flex !important;
+    width: 100% !important;
+    order: 3;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(200, 109, 81, 0.15);
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 16px !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .floating-nav .hidden.md\:flex::-webkit-scrollbar {
+    display: none;
+  }
+
+  .floating-nav .hidden.md\:flex a {
+    font-size: 12px !important;
+    flex-shrink: 0;
   }
 
   .floating-nav img {
-    width: 32px !important;
-    height: 32px !important;
+    width: 34px !important;
+    height: 34px !important;
   }
 
-  .floating-nav button, 
+  .floating-nav span {
+    font-size: 1rem !important;
+  }
+
   .floating-nav a.bg-forest {
-    padding: 4px 8px !important;
+    padding: 5px 10px !important;
+    font-size: 11px !important;
+  }
+
+  .floating-nav button {
     font-size: 10px !important;
   }
 }
