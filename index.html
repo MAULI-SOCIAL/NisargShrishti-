@@ -24,7 +24,7 @@
   <!-- FLOATING NAVBAR -->
   <nav class="floating-nav px-5 py-2.5 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-3">
-      <img src="logo.jpg" alt="Nisarg Shrishti Logo" class="w-11 h-11 rounded-full object-cover border-2 border-sage/40 shadow-sm">
+      <img src="logo.jpg" alt="Nisarg Shrishti Logo" class="w-11 h-11 rounded-full object-cover border-2 border-sage/40 shadow-sm" onerror="this.src='logo.JPG'">
       <span class="font-serif text-xl md:text-2xl font-bold text-forest tracking-tight">Nisarg Shrishti</span>
     </a>
 
@@ -53,12 +53,12 @@
   <section class="max-w-6xl mx-auto pt-32 px-6 text-center">
     
     <div class="relative w-full h-[360px] md:h-[460px] rounded-[36px] overflow-hidden shadow-xl mb-10 border-2 border-sage/30">
-      <img src="plexus.jpg" alt="Nisarg Shrishti Agro Tourism" class="w-full h-full object-cover">
+      <img src="plexus.jpg" alt="Nisarg Shrishti Agro Tourism" class="w-full h-full object-cover" onerror="this.src='plexus.JPG'">
       <div class="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/40 to-transparent flex flex-col items-center justify-center p-6 text-center">
         <h1 id="heroTitle" class="font-serif text-3xl md:text-5xl font-bold text-white tracking-wider title-smallcaps drop-shadow-md mb-4">
           Nisarg Shrishti Agro Tourism
         </h1>
-        <img src="logo.jpg" alt="Nisarg Shrishti Badge" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white/90 shadow-2xl object-cover transform hover:scale-105 transition duration-300">
+        <img src="logo.jpg" alt="Nisarg Shrishti Badge" class="w-24 h-24 md:w-32 md:h-32 rounded-full border-4 border-white/90 shadow-2xl object-cover transform hover:scale-105 transition duration-300" onerror="this.src='logo.JPG'">
       </div>
     </div>
 
@@ -86,7 +86,7 @@
       </a>
     </div>
 
-    <!-- REORDERED GRID: AGRO LEARNING FIRST, FOLLOWED BY ACTIVITIES -->
+    <!-- REORDERED GRID WITH DUAL EXTENSION FALLBACKS -->
     <div class="text-left mb-6">
       <h2 id="sectionHighlights" class="font-serif text-3xl font-bold text-forest">Farm Experiences & Learning Highlights</h2>
       <p class="text-slate-600 text-sm">Explore our educational modules and recreational activities.</p>
@@ -95,7 +95,7 @@
     <div class="grid md:grid-cols-4 gap-6 text-left mb-10">
       
       <!-- 1. AGRO LEARNING: Polyhouse Tech -->
-      <div class="flashcard-img" style="background-image: url('polyhouse-card.jpg');">
+      <div class="flashcard-img" style="background-image: url('polyhouse-card.jpg'), url('polyhouse-card.JPG');">
         <div class="flashcard-content">
           <span class="px-3 py-1 bg-sage/90 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Agro Learning</span>
           <h3 class="font-serif text-xl font-bold">Polyhouse Tech</h3>
@@ -104,7 +104,7 @@
       </div>
 
       <!-- 2. AGRO LEARNING: Micro-Greens -->
-      <div class="flashcard-img" style="background-image: url('microgreens-card.jpg');">
+      <div class="flashcard-img" style="background-image: url('microgreens-card.jpg'), url('microgreens-card.JPG');">
         <div class="flashcard-content">
           <span class="px-3 py-1 bg-sage/90 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Agro Learning</span>
           <h3 class="font-serif text-xl font-bold">Micro-Greens</h3>
@@ -112,8 +112,8 @@
         </div>
       </div>
 
-      <!-- 3. AGRO LEARNING: Permaculture (WITH VIDEO) -->
-      <div class="flashcard-img relative overflow-hidden" style="background-image: url('permaculture-card.jpg');">
+      <!-- 3. AGRO LEARNING: Permaculture -->
+      <div class="flashcard-img relative overflow-hidden" style="background-image: url('permaculture-card.jpg'), url('permaculture-card.JPG'), url('permaculture.jpg'), url('permaculture.JPG');">
         <video autoplay loop muted playsinline class="card-video-bg">
           <source src="permaculture.mp4" type="video/mp4">
         </video>
@@ -124,8 +124,8 @@
         </div>
       </div>
 
-      <!-- 4. ACTIVITY: Exotic Aviary (WITH VIDEO) -->
-      <div class="flashcard-img relative overflow-hidden" style="background-image: url('aviary.jpg');">
+      <!-- 4. ACTIVITY: Exotic Aviary -->
+      <div class="flashcard-img relative overflow-hidden" style="background-image: url('aviary.jpg'), url('aviary.JPG');">
         <video autoplay loop muted playsinline class="card-video-bg">
           <source src="aviary.mp4" type="video/mp4">
         </video>
@@ -136,8 +136,8 @@
         </div>
       </div>
 
-      <!-- 5. ACTIVITY: Pottery Workshop (WITH VIDEO) -->
-      <div class="flashcard-img relative overflow-hidden" style="background-image: url('pottery.jpg');">
+      <!-- 5. ACTIVITY: Pottery Workshop -->
+      <div class="flashcard-img relative overflow-hidden" style="background-image: url('pottery.jpg'), url('pottery.JPG');">
         <video autoplay loop muted playsinline class="card-video-bg">
           <source src="pottery.mp4" type="video/mp4">
         </video>
@@ -148,8 +148,8 @@
         </div>
       </div>
 
-      <!-- 6. ACTIVITY: Aquatic Koi Ponds (WITH VIDEO & JUMPING FISH) -->
-      <div class="flashcard-img relative overflow-hidden" style="background-image: url('aquatic.jpg');">
+      <!-- 6. ACTIVITY: Aquatic Koi Ponds -->
+      <div class="flashcard-img relative overflow-hidden" style="background-image: url('aquatic.jpg'), url('aquatic.JPG');">
         <video autoplay loop muted playsinline class="card-video-bg">
           <source src="aquatic.mp4" type="video/mp4">
         </video>
@@ -167,7 +167,7 @@
       </div>
 
       <!-- 7. ACTIVITY: Archery Range -->
-      <div class="flashcard-img" style="background-image: url('archery-card.jpg');">
+      <div class="flashcard-img" style="background-image: url('archery-card.jpg'), url('archery-card.JPG'), url('archery.jpg'), url('archery.JPG');">
         <div class="flashcard-content">
           <span class="px-3 py-1 bg-terracotta/80 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Activity</span>
           <h3 class="font-serif text-xl font-bold">Archery Range</h3>
@@ -176,7 +176,7 @@
       </div>
 
       <!-- 8. STAY EXPERIENCE: Starlit Camping -->
-      <div class="flashcard-img" style="background-image: url('camping-card.jpg');">
+      <div class="flashcard-img" style="background-image: url('camping-card.jpg'), url('camping-card.JPG'), url('camping.jpg'), url('camping.JPG');">
         <div class="flashcard-content">
           <span class="px-3 py-1 bg-terracotta/80 text-white text-[10px] font-bold rounded-full uppercase mb-2 inline-block">Stay Experience</span>
           <h3 class="font-serif text-xl font-bold">Starlit Camping</h3>
