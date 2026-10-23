@@ -125,7 +125,7 @@
           <div id="totalDisplay" class="font-serif text-4xl font-extrabold text-forest">₹600</div>
         </div>
 
-        <button onclick="generateUPI()" class="px-8 py-4 bg-terracotta text-white font-bold rounded-full shadow-lg hover:bg-orange-800 transition">
+        <button id="btnSubmit" onclick="generateUPI()" class="px-8 py-4 bg-terracotta text-white font-bold rounded-full shadow-lg hover:bg-orange-800 transition">
           Generate UPI Payment QR Code
         </button>
       </div>
@@ -135,12 +135,18 @@
         <h3 class="font-serif text-xl font-bold text-forest mb-2">Scan & Pay via GPay / PhonePe / Paytm</h3>
         <p class="text-xs text-slate-500 mb-4">Scan the code below to complete pass confirmation:</p>
         <div id="qrcode" class="flex justify-center mb-4"></div>
-        <p class="text-xs font-mono font-bold text-slate-600">UPI ID: 7774049999@ybl</p>
+        <p class="text-xs font-mono font-bold text-slate-600 mb-2">UPI ID: 7774049999@ybl</p>
+        <div class="mt-4 p-3 bg-emerald-50 rounded-2xl text-emerald-800 text-xs font-bold">
+          ✅ Reservation logged! Once payment is completed to 7774049999@ybl, your spot is confirmed.
+        </div>
       </div>
     </div>
   </div>
 
   <script>
+  // Google Apps Script Web App URL
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz5J-yQQEqjNnursO9X_pGXb_v7IggIR7KttvmhLyW15O23f6GYGqTUvpK8X-MkGS4ATQ/exec";
+
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);
   document.getElementById('bookingDate').value = tomorrow.toISOString().split('T')[0];
@@ -169,7 +175,13 @@
   }
 
   function generateUPI() {
-    const phone = document.getElementById('guestPhone').value;
+    const name = document.getElementById('guestName').value.trim();
+    const phone = document.getElementById('guestPhone').value.trim();
+    
+    if (!name) {
+      alert('Please enter your Full Name.');
+      return;
+    }
     if (!phone) {
       alert('Please enter your Mobile / WhatsApp Number before generating the QR code.');
       return;
@@ -177,22 +189,55 @@
 
     const guests = parseInt(document.getElementById('guestCount').value) || 1;
     const type = document.querySelector('input[name="visitType"]:checked').value;
+    const date = document.getElementById('bookingDate').value;
     const rate = type === 'day' ? 300 : 800;
     const total = rate * guests;
     
+    let slot = "Overnight Camping";
+    if (type === 'day') {
+      const slotEl = document.querySelector('input[name="timeSlot"]:checked');
+      slot = slotEl ? slotEl.value : "Morning Slot";
+    }
+
+    // 1. Send Data to Google Sheet & Gmail Notification
+    const payload = {
+      name: name,
+      phone: phone,
+      date: date,
+      type: type === 'day' ? 'Standard Day Pass' : 'Camping Pass',
+      slot: slot,
+      guests: guests,
+      amount: total
+    };
+
+    const submitBtn = document.getElementById('btnSubmit');
+    submitBtn.innerText = "Processing...";
+    submitBtn.disabled = true;
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(err => console.log('Database Log Error:', err));
+
+    // 2. Generate UPI QR Code
     const qrContainer = document.getElementById('qrcode');
     qrContainer.innerHTML = '';
     
-    // UPDATED WITH YOUR UPI ID: 7774049999@ybl
     const upiUrl = `upi://pay?pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total}&cu=INR`;
     
-    new QRCode(qrContainer, {
-      text: upiUrl,
-      width: 180,
-      height: 180
-    });
+    setTimeout(() => {
+      new QRCode(qrContainer, {
+        text: upiUrl,
+        width: 180,
+        height: 180
+      });
 
-    document.getElementById('qrBox').classList.remove('hidden');
+      document.getElementById('qrBox').classList.remove('hidden');
+      submitBtn.innerText = "Generate UPI Payment QR Code";
+      submitBtn.disabled = false;
+    }, 400);
   }
 </script>
 </body>
