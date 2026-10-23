@@ -34,20 +34,42 @@ h1, h2, h3, h4, .font-serif {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Glass Floating Navbar */
+/* Glass Floating Navbar & Mobile Alignment Fix */
 .floating-nav {
   position: fixed;
-  top: 1rem;
+  top: 0.75rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 92%;
+  width: 94%;
   max-width: 1150px;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 202, 193, 0.5);
-  border-radius: 9999px;
+  border-radius: 28px;
   z-index: 100;
-  box-shadow: 0 8px 32px rgba(28, 63, 54, 0.06);
+  box-shadow: 0 8px 32px rgba(28, 63, 54, 0.08);
+}
+
+@media (max-width: 768px) {
+  .floating-nav {
+    padding: 6px 12px !important;
+    border-radius: 20px;
+  }
+  
+  .floating-nav a span {
+    font-size: 0.95rem !important;
+  }
+
+  .floating-nav img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .floating-nav button, 
+  .floating-nav a.bg-forest {
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+  }
 }
 
 /* Pinterest Image Flashcards */
