@@ -135,64 +135,65 @@
         <h3 class="font-serif text-xl font-bold text-forest mb-2">Scan & Pay via GPay / PhonePe / Paytm</h3>
         <p class="text-xs text-slate-500 mb-4">Scan the code below to complete pass confirmation:</p>
         <div id="qrcode" class="flex justify-center mb-4"></div>
-        <p class="text-xs font-mono font-bold text-slate-600">UPI ID: 9923000700@upi</p>
+        <p class="text-xs font-mono font-bold text-slate-600">UPI ID: 7774049999@ybl</p>
       </div>
     </div>
   </div>
 
   <script>
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    document.getElementById('bookingDate').value = tomorrow.toISOString().split('T')[0];
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  document.getElementById('bookingDate').value = tomorrow.toISOString().split('T')[0];
 
-    function updateBooking() {
-      const type = document.querySelector('input[name="visitType"]:checked').value;
-      const guests = parseInt(document.getElementById('guestCount').value) || 1;
-      const rate = type === 'day' ? 300 : 800;
-      const total = rate * guests;
+  function updateBooking() {
+    const type = document.querySelector('input[name="visitType"]:checked').value;
+    const guests = parseInt(document.getElementById('guestCount').value) || 1;
+    const rate = type === 'day' ? 300 : 800;
+    const total = rate * guests;
 
-      document.getElementById('totalDisplay').innerText = `₹${total.toLocaleString('en-IN')}`;
+    document.getElementById('totalDisplay').innerText = `₹${total.toLocaleString('en-IN')}`;
 
-      const cardDay = document.getElementById('cardDay');
-      const cardCamping = document.getElementById('cardCamping');
-      const slotSection = document.getElementById('slotSection');
+    const cardDay = document.getElementById('cardDay');
+    const cardCamping = document.getElementById('cardCamping');
+    const slotSection = document.getElementById('slotSection');
 
-      if (type === 'day') {
-        cardDay.className = 'border-2 border-terracotta bg-blush/30 p-6 rounded-3xl cursor-pointer block transition relative';
-        cardCamping.className = 'border-2 border-slate-200 bg-white p-6 rounded-3xl cursor-pointer block transition relative';
-        slotSection.style.display = 'block';
-      } else {
-        cardCamping.className = 'border-2 border-terracotta bg-blush/30 p-6 rounded-3xl cursor-pointer block transition relative';
-        cardDay.className = 'border-2 border-slate-200 bg-white p-6 rounded-3xl cursor-pointer block transition relative';
-        slotSection.style.display = 'none';
-      }
+    if (type === 'day') {
+      cardDay.className = 'border-2 border-terracotta bg-blush/30 p-6 rounded-3xl cursor-pointer block transition relative';
+      cardCamping.className = 'border-2 border-slate-200 bg-white p-6 rounded-3xl cursor-pointer block transition relative';
+      slotSection.style.display = 'block';
+    } else {
+      cardCamping.className = 'border-2 border-terracotta bg-blush/30 p-6 rounded-3xl cursor-pointer block transition relative';
+      cardDay.className = 'border-2 border-slate-200 bg-white p-6 rounded-3xl cursor-pointer block transition relative';
+      slotSection.style.display = 'none';
+    }
+  }
+
+  function generateUPI() {
+    const phone = document.getElementById('guestPhone').value;
+    if (!phone) {
+      alert('Please enter your Mobile / WhatsApp Number before generating the QR code.');
+      return;
     }
 
-    function generateUPI() {
-      const phone = document.getElementById('guestPhone').value;
-      if (!phone) {
-        alert('Please enter your Mobile / WhatsApp Number before generating the QR code.');
-        return;
-      }
+    const guests = parseInt(document.getElementById('guestCount').value) || 1;
+    const type = document.querySelector('input[name="visitType"]:checked').value;
+    const rate = type === 'day' ? 300 : 800;
+    const total = rate * guests;
+    
+    const qrContainer = document.getElementById('qrcode');
+    qrContainer.innerHTML = '';
+    
+    // UPDATED WITH YOUR UPI ID: 7774049999@ybl
+    const upiUrl = `upi://pay?pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total}&cu=INR`;
+    
+    new QRCode(qrContainer, {
+      text: upiUrl,
+      width: 180,
+      height: 180
+    });
 
-      const guests = parseInt(document.getElementById('guestCount').value) || 1;
-      const type = document.querySelector('input[name="visitType"]:checked').value;
-      const rate = type === 'day' ? 300 : 800;
-      const total = rate * guests;
-      
-      const qrContainer = document.getElementById('qrcode');
-      qrContainer.innerHTML = '';
-      
-      const upiUrl = `upi://pay?pa=9923000700@upi&pn=Nisarg%20Shrishti%20Farm&am=${total}&cu=INR`;
-      
-      new QRCode(qrContainer, {
-        text: upiUrl,
-        width: 180,
-        height: 180
-      });
-
-      document.getElementById('qrBox').classList.remove('hidden');
-    }
-  </script>
+    document.getElementById('qrBox').classList.remove('hidden');
+  }
+</script>
 </body>
 </html>
