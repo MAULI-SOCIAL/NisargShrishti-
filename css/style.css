@@ -157,3 +157,12 @@ h1, h2, h3, h4, .font-serif {
   transform: scale(1.05);
   background: var(--blush-pink);
 }
+/* Card Background Video Styling */
+.card-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
