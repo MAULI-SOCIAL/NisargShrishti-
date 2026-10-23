@@ -67,7 +67,7 @@
         </label>
       </div>
 
-      <!-- SLOT SELECTOR SECTION (Active for Day Passes) -->
+      <!-- SLOT SELECTOR SECTION -->
       <div id="slotSection" class="mb-8">
         <h2 class="font-serif text-2xl font-bold text-forest mb-4">2. Select Time Slot</h2>
         <div class="grid md:grid-cols-3 gap-4">
@@ -126,26 +126,40 @@
         </div>
 
         <button id="btnSubmit" onclick="generateUPI()" class="px-8 py-4 bg-terracotta text-white font-bold rounded-full shadow-lg hover:bg-orange-800 transition">
-          Generate UPI Payment QR Code
+          Generate UPI Payment QR Code & Apps
         </button>
       </div>
 
-      <!-- DYNAMIC QR BOX -->
+      <!-- DYNAMIC QR BOX & DIRECT APP BUTTONS -->
       <div id="qrBox" class="hidden mt-8 p-6 bg-white border-2 border-emerald-500 rounded-3xl text-center">
-        <h3 class="font-serif text-xl font-bold text-forest mb-2">Scan & Pay via GPay / PhonePe / Paytm</h3>
-        <p class="text-xs text-slate-500 mb-4">Scan the code below to complete pass confirmation:</p>
-        <div id="qrcode" class="flex justify-center mb-4"></div>
-        <p class="text-xs font-mono font-bold text-slate-600 mb-2">UPI ID: 7774049999@ybl</p>
-        <div class="mt-4 p-3 bg-emerald-50 rounded-2xl text-emerald-800 text-xs font-bold">
-  ✅ Reservation logged! Once payment is completed, your spot is confirmed & entry pass will be sent on sms+WhatsApp within 15 minutes
+        <h3 class="font-serif text-xl font-bold text-forest mb-2">Complete Your Payment</h3>
+        <p class="text-xs text-slate-500 mb-4">Tap your preferred UPI App below (Mobile) or scan the QR code:</p>
+        
+        <!-- DIRECT UPI APP BUTTONS -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+          <a id="gpayBtn" href="#" class="flex items-center justify-center gap-2 p-3.5 bg-slate-900 text-white rounded-2xl font-bold text-xs hover:bg-black transition shadow-sm">
+            <span>🔵 Google Pay</span>
+          </a>
+          <a id="phonepeBtn" href="#" class="flex items-center justify-center gap-2 p-3.5 bg-purple-700 text-white rounded-2xl font-bold text-xs hover:bg-purple-800 transition shadow-sm">
+            <span>🟣 PhonePe</span>
+          </a>
+          <a id="paytmBtn" href="#" class="flex items-center justify-center gap-2 p-3.5 bg-cyan-600 text-white rounded-2xl font-bold text-xs hover:bg-cyan-700 transition shadow-sm">
+            <span>🟦 Paytm</span>
+          </a>
         </div>
+
+        <div class="border-t border-slate-200 pt-6">
+          <div id="qrcode" class="flex justify-center mb-3"></div>
+          <p class="text-xs font-mono font-bold text-slate-600 mb-2">UPI ID: 7774049999@ybl</p>
+          <div class="mt-4 p-3 bg-emerald-50 rounded-2xl text-emerald-800 text-xs font-bold">
+            ✅ Reservation logged! Once payment is completed, your spot is confirmed & entry pass will be sent on sms+WhatsApp within 15 minutes
+          </div>
         </div>
       </div>
     </div>
   </div>
 
   <script>
-  // Google Apps Script Web App URL
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz5J-yQQEqjNnursO9X_pGXb_v7IggIR7KttvmhLyW15O23f6GYGqTUvpK8X-MkGS4ATQ/exec";
 
   const tomorrow = new Date();
@@ -184,7 +198,7 @@
       return;
     }
     if (!phone) {
-      alert('Please enter your Mobile / WhatsApp Number before generating the QR code.');
+      alert('Please enter your Mobile / WhatsApp Number before generating payment options.');
       return;
     }
 
@@ -222,21 +236,27 @@
       body: JSON.stringify(payload)
     }).catch(err => console.log('Database Log Error:', err));
 
-    // 2. Generate UPI QR Code
+    // 2. Generate UPI URL & App Links
+    const upiUrl = `upi://pay?pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total}&cu=INR`;
+    
+    // Assign link to Google Pay, PhonePe, and Paytm buttons
+    document.getElementById('gpayBtn').href = upiUrl;
+    document.getElementById('phonepeBtn').href = upiUrl;
+    document.getElementById('paytmBtn').href = upiUrl;
+
+    // 3. Render QR Code
     const qrContainer = document.getElementById('qrcode');
     qrContainer.innerHTML = '';
-    
-    const upiUrl = `upi://pay?pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total}&cu=INR`;
     
     setTimeout(() => {
       new QRCode(qrContainer, {
         text: upiUrl,
-        width: 180,
-        height: 180
+        width: 170,
+        height: 170
       });
 
       document.getElementById('qrBox').classList.remove('hidden');
-      submitBtn.innerText = "Generate UPI Payment QR Code";
+      submitBtn.innerText = "Generate UPI Payment QR Code & Apps";
       submitBtn.disabled = false;
     }, 400);
   }
