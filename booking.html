@@ -159,7 +159,7 @@
     </div>
   </div>
 
-  <script>
+<script>
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz5J-yQQEqjNnursO9X_pGXb_v7IggIR7KttvmhLyW15O23f6GYGqTUvpK8X-MkGS4ATQ/exec";
 
   const tomorrow = new Date();
@@ -236,16 +236,17 @@
       body: JSON.stringify(payload)
     }).catch(err => console.log('Database Log Error:', err));
 
-    // 2. Pure Integer Amount Params (Strictly no decimals e.g. am=600)
-    const rawParams = `pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total}&cu=INR`;
+    // 2. Generate Unique Transaction Reference (Fixes limit/error bugs in UPI apps)
+    const txRef = 'NS' + Date.now();
+    const rawParams = `pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total}&tr=${txRef}&tn=Nisarg%20Shrishti%20Booking&cu=INR`;
     const standardUpi = `upi://pay?${rawParams}`;
 
-    // App specific intents
+    // App specific intents with unique ref parameters
     document.getElementById('gpayBtn').href = `gpay://upi/pay?${rawParams}`;
     document.getElementById('phonepeBtn').href = `phonepe://pay?${rawParams}`;
     document.getElementById('paytmBtn').href = `paytmmp://pay?${rawParams}`;
 
-    // Fallback handler if intent isn't registered on device
+    // Fallback handler if custom intent isn't registered on device
     [document.getElementById('gpayBtn'), document.getElementById('phonepeBtn'), document.getElementById('paytmBtn')].forEach(btn => {
       btn.onclick = function(e) {
         setTimeout(() => {
