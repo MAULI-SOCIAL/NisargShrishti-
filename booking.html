@@ -135,7 +135,7 @@
         <h3 class="font-serif text-xl font-bold text-forest mb-2">Complete Your Payment</h3>
         <p class="text-xs text-slate-500 mb-4">Tap an app below to pay directly or scan the QR code:</p>
         
-        <!-- LOGO BUTTONS (COMPACT, NO TEXT, DIRECT INTENTS) -->
+        <!-- LOGO BUTTONS -->
         <div class="flex justify-center items-center gap-4 mb-6">
           <a id="gpayBtn" href="#" class="p-3 bg-white border border-slate-200 rounded-2xl shadow-sm hover:scale-105 transition flex items-center justify-center w-24 h-14">
             <img src="gpay.png" alt="Google Pay" class="h-8 max-w-full object-contain">
@@ -170,9 +170,9 @@
     const type = document.querySelector('input[name="visitType"]:checked').value;
     const guests = parseInt(document.getElementById('guestCount').value) || 1;
     const rate = type === 'day' ? 300 : 800;
-    const total = rate * guests;
+    const total = Math.round(rate * guests);
 
-    document.getElementById('totalDisplay').innerText = `₹${total.toLocaleString('en-IN')}`;
+    document.getElementById('totalDisplay').innerText = `₹${total}`;
 
     const cardDay = document.getElementById('cardDay');
     const cardCamping = document.getElementById('cardCamping');
@@ -206,7 +206,7 @@
     const type = document.querySelector('input[name="visitType"]:checked').value;
     const date = document.getElementById('bookingDate').value;
     const rate = type === 'day' ? 300 : 800;
-    const total = rate * guests;
+    const total = Math.round(rate * guests);
     
     let slot = "Overnight Camping";
     if (type === 'day') {
@@ -236,11 +236,11 @@
       body: JSON.stringify(payload)
     }).catch(err => console.log('Database Log Error:', err));
 
-    // 2. Specific App Deep-link Intents (total.toFixed(0) avoids decimals that break app limits)
-    const rawParams = `pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total.toFixed(0)}&cu=INR`;
+    // 2. Pure Integer Amount Params (Strictly no decimals e.g. am=600)
+    const rawParams = `pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total}&cu=INR`;
     const standardUpi = `upi://pay?${rawParams}`;
 
-    // App specific intents to avoid defaulting to WhatsApp Pay
+    // App specific intents
     document.getElementById('gpayBtn').href = `gpay://upi/pay?${rawParams}`;
     document.getElementById('phonepeBtn').href = `phonepe://pay?${rawParams}`;
     document.getElementById('paytmBtn').href = `paytmmp://pay?${rawParams}`;
