@@ -133,12 +133,12 @@
       <!-- DYNAMIC QR BOX -->
       <div id="qrBox" class="hidden mt-8 p-6 bg-white border-2 border-emerald-500 rounded-3xl text-center">
         <h3 class="font-serif text-xl font-bold text-forest mb-2">Complete Your Payment</h3>
-        <p class="text-xs text-slate-500 mb-6">Tap the button below on mobile to pick your UPI app (GPay, PhonePe, Paytm, etc.) or scan the QR code:</p>
+        <p class="text-xs text-slate-500 mb-6">Tap the button below on mobile or scan the QR code to pay:</p>
         
         <!-- UNIVERSAL MOBILE PAYMENT BUTTON -->
         <div class="mb-6">
           <a id="directUpiBtn" href="#" class="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl shadow transition text-sm gap-2">
-            📲 Choose UPI App to Pay
+            📲 Open Payment App
           </a>
         </div>
 
@@ -236,22 +236,13 @@
       body: JSON.stringify(payload)
     }).catch(err => console.log('Database Log Error:', err));
 
-    // 2. Generate Encoded UPI String and Chrome Intent Format to force app chooser
+    // 2. Generate Safe Universal Standard UPI Link
     const txRef = 'NS' + Date.now();
     const rawParams = `pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total}&tr=${txRef}&tn=Nisarg%20Shrishti%20Booking&cu=INR`;
     const standardUpi = `upi://pay?${rawParams}`;
 
-    // Wrapping into a Chrome intent structure forces the phone to show a popup menu of all available UPI apps
-    const androidIntentUrl = `intent://pay?${rawParams}#Intent;scheme=upi;package=net.one97.paytm;end;` // fallback or standard selector approach below:
-    
-    // Universal intent format that triggers app chooser popup on Android Chrome/Browsers:
-    const finalIntent = `intent://pay?${rawParams}&package=com.google.android.apps.nbu.paisa.user#Intent;scheme=upi;end;`;
-
-    // Alternatively, let's use a standard clean intent that invokes chooser:
-    const chooserIntent = `intent://pay?${rawParams}#Intent;scheme=upi;package=undefined;S.browser_fallback_url=${encodeURIComponent(standardUpi)};end;`;
-
-    // Setting standard browser intent link
-    document.getElementById('directUpiBtn').href = chooserIntent;
+    // Set standard secure URI directly to prevent any malformed address crashes
+    document.getElementById('directUpiBtn').href = standardUpi;
 
     // 3. Render QR Code
     const qrContainer = document.getElementById('qrcode');
