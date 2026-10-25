@@ -130,21 +130,15 @@
         </button>
       </div>
 
-      <!-- DYNAMIC QR BOX & LOGO BUTTONS -->
+      <!-- DYNAMIC QR BOX -->
       <div id="qrBox" class="hidden mt-8 p-6 bg-white border-2 border-emerald-500 rounded-3xl text-center">
         <h3 class="font-serif text-xl font-bold text-forest mb-2">Complete Your Payment</h3>
-        <p class="text-xs text-slate-500 mb-4">Tap an app below to pay directly or scan the QR code:</p>
+        <p class="text-xs text-slate-500 mb-6">Tap the button below on mobile or scan the QR code to pay:</p>
         
-        <!-- LOGO BUTTONS -->
-        <div class="flex justify-center items-center gap-4 mb-6">
-          <a id="gpayBtn" href="#" class="p-3 bg-white border border-slate-200 rounded-2xl shadow-sm hover:scale-105 transition flex items-center justify-center w-24 h-14">
-            <img src="gpay.png" alt="Google Pay" class="h-8 max-w-full object-contain">
-          </a>
-          <a id="phonepeBtn" href="#" class="p-3 bg-white border border-slate-200 rounded-2xl shadow-sm hover:scale-105 transition flex items-center justify-center w-24 h-14">
-            <img src="phonepe.png" alt="PhonePe" class="h-8 max-w-full object-contain">
-          </a>
-          <a id="paytmBtn" href="#" class="p-3 bg-white border border-slate-200 rounded-2xl shadow-sm hover:scale-105 transition flex items-center justify-center w-24 h-14">
-            <img src="paytm.png" alt="Paytm" class="h-8 max-w-full object-contain">
+        <!-- UNIVERSAL MOBILE PAYMENT BUTTON -->
+        <div class="mb-6">
+          <a id="directUpiBtn" href="#" class="inline-flex items-center justify-center px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-2xl shadow transition text-sm gap-2">
+            📲 Pay via Any UPI App (GPay / PhonePe / Paytm)
           </a>
         </div>
 
@@ -242,24 +236,13 @@
       body: JSON.stringify(payload)
     }).catch(err => console.log('Database Log Error:', err));
 
-    // 2. Generate Unique Transaction Reference (Fixes limit/error bugs in UPI apps)
+    // 2. Generate Safe Universal Standard UPI Link
     const txRef = 'NS' + Date.now();
     const rawParams = `pa=7774049999@ybl&pn=Nisarg%20Shrishti%20Farm&am=${total}&tr=${txRef}&tn=Nisarg%20Shrishti%20Booking&cu=INR`;
     const standardUpi = `upi://pay?${rawParams}`;
 
-    // App specific intents with unique ref parameters
-    document.getElementById('gpayBtn').href = `gpay://upi/pay?${rawParams}`;
-    document.getElementById('phonepeBtn').href = `phonepe://pay?${rawParams}`;
-    document.getElementById('paytmBtn').href = `paytmmp://pay?${rawParams}`;
-
-    // Fallback handler if custom intent isn't registered on device
-    [document.getElementById('gpayBtn'), document.getElementById('phonepeBtn'), document.getElementById('paytmBtn')].forEach(btn => {
-      btn.onclick = function(e) {
-        setTimeout(() => {
-          window.location.href = standardUpi;
-        }, 500);
-      };
-    });
+    // Set standard UPI intent directly on mobile button
+    document.getElementById('directUpiBtn').href = standardUpi;
 
     // 3. Render QR Code
     const qrContainer = document.getElementById('qrcode');
